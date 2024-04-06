@@ -1,4 +1,4 @@
-final class MyAppImages {
-  static const String onboardingfirst =
-      'lib/assets/workshop image for mechanicapp.png';
-}
+const String onboardingfirst = 'assets/images/onboarding3.png';
+const String onboardingsecond =
+    'assets/images/car_workshop_for_splash-removebg-preview 1.png';
+const String onboardingthird = 'assets/images/img3.png';

@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:vehicanich/utils/app_colors.dart';
-import 'package:vehicanich/widgets/onboarding_widgets/onboarding_image.dart';
-import 'package:vehicanich/widgets/onboarding_widgets/onboarding_texts.dart';
+import 'package:vehicanich/screens/onboarding/onboarding_items.dart';
+//
 
 class Splashscreen extends StatelessWidget {
-  const Splashscreen({super.key});
-
+  Splashscreen({super.key});
+  final controller = OnboardingItems();
+  final pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Myappallcolor().appbackgroundcolor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-          const Myonboardmaintitle(
-            title: 'VEHICANICH',
-          ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-          const Onboardingfirstimage(),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.2),
-          const Myonboardingsmalltext(),
-        ],
+      body: PageView.builder(
+        itemCount: controller.items.length,
+        itemBuilder: (context, index) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Image.asset(controller.items[index].image)],
+          );
+        },
+        controller: pageController,
       ),
+      // backgroundColor: Myappallcolor().appbackgroundcolor,
+      // body: Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //     SizedBox(height: Mymediaquery().mediaqueryheight(0.1, context)),
+      //     const Myonboardmaintitle(
+      //       title: 'VEHICANICH',
+      //     ),
+      //     SizedBox(height: Mymediaquery().mediaqueryheight(0.05, context)),
+      //     const Onboardingfirstimage(),
+      //     SizedBox(height: Mymediaquery().mediaquerywidth(0.02, context)),
+      //     const Myonboardingsmalltext(),
+      //   ],
+      // ),
     );
   }
 }

@@ -8,7 +8,7 @@ class Onboardingfirstimage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Image(
-        image: AssetImage(MyAppImages.onboardingfirst),
+        image: AssetImage(onboardingfirst),
         fit: BoxFit.contain,
       ),
     );
