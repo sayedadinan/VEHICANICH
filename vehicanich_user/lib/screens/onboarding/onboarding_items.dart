@@ -5,7 +5,7 @@ class OnboardingItems {
   List<OnboardingInfo> items = [
     OnboardingInfo(
       title: 'VEHICANICH',
-      subtitle: 'DE',
+      subtitle: 'We make your car\nsmarter',
       image: onboardingfirst,
     ),
     OnboardingInfo(

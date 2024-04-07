@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vehicanich/screens/onboarding/onboarding_items.dart';
-//
+import 'package:vehicanich/utils/app_colors.dart';
+import 'package:vehicanich/utils/mediaquery.dart';
+import 'package:vehicanich/widgets/onboarding_widgets/onboarding_image.dart';
+import 'package:vehicanich/widgets/onboarding_widgets/onboarding_texts.dart';
+import 'package:vehicanich/widgets/onboarding_widgets/smoothindicator.dart';
 
 class Splashscreen extends StatelessWidget {
   Splashscreen({super.key});
@@ -9,33 +13,55 @@ class Splashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView.builder(
-        itemCount: controller.items.length,
-        itemBuilder: (context, index) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [Image.asset(controller.items[index].image)],
-          );
-        },
-        controller: pageController,
+      bottomSheet: Smoothindicatorwithbutton(
+        controller: controller,
+        pageController: pageController,
       ),
-      // backgroundColor: Myappallcolor().appbackgroundcolor,
-      // body: Column(
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      //   children: [
-      //     SizedBox(height: Mymediaquery().mediaqueryheight(0.1, context)),
-      //     const Myonboardmaintitle(
-      //       title: 'VEHICANICH',
-      //     ),
-      //     SizedBox(height: Mymediaquery().mediaqueryheight(0.05, context)),
-      //     const Onboardingfirstimage(),
-      //     SizedBox(height: Mymediaquery().mediaquerywidth(0.02, context)),
-      //     const Myonboardingsmalltext(),
-      //   ],
-      // ),
+      backgroundColor: Myappallcolor().appbackgroundcolor,
+      body: PageView.builder(
+          itemCount: controller.items.length,
+          itemBuilder: (context, index) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: Mymediaquery().mediaqueryheight(0.1, context)),
+                Myonboardmaintitle(title: controller.items[index].title),
+                SizedBox(
+                    height: Mymediaquery().mediaqueryheight(0.05, context)),
+                Onboardingfirstimage(path: controller.items[index].image),
+                SizedBox(
+                    height: Mymediaquery().mediaqueryheight(0.09, context)),
+                Myonboardingsmalltext(
+                    subtitle: controller.items[index].subtitle)
+              ],
+            );
+          },
+          controller: pageController),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // project_name/
 // ├── android/
 // ├── ios/

@@ -19,13 +19,14 @@ class Myonboardmaintitle extends StatelessWidget {
 }
 
 class Myonboardingsmalltext extends StatelessWidget {
-  const Myonboardingsmalltext({super.key});
+  final String subtitle;
+  const Myonboardingsmalltext({super.key, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Text(
-        'We make your car\nsmarter',
+        subtitle,
         style: TextStyle(
           color: Myappallcolor().textcolor,
           fontSize: MediaQuery.of(context).size.width * 0.07,
