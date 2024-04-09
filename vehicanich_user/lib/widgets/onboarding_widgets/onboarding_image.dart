@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:vehicanich/utils/app_images.dart';
 
 class Onboardingfirstimage extends StatelessWidget {
-  const Onboardingfirstimage({super.key});
+  final String path;
+  const Onboardingfirstimage({super.key, required this.path});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Image(
-        image: AssetImage(MyAppImages.onboardingfirst),
+        image: AssetImage(path),
         fit: BoxFit.contain,
       ),
     );
