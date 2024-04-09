@@ -9,7 +9,8 @@ class OnboardingItems {
       image: onboardingfirst,
     ),
     OnboardingInfo(
-        title: 'VEHICANICH', subtitle: 'DES', image: onboardingsecond),
-    OnboardingInfo(title: 'VEHICANICH', subtitle: 'JKD', image: onboardingthird)
+        title: 'VEHICANICH',
+        subtitle: 'Get updates of your\n vehicle condition',
+        image: onboardingthird)
   ];
 }
