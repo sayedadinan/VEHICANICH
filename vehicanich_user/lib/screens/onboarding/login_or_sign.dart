@@ -16,11 +16,11 @@ class Loginorsign extends StatelessWidget {
         listener: (context, state) {
           if (state is NavigatetoLoginPage) {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const Loginscreen()));
+                MaterialPageRoute(builder: (context) => Loginscreen()));
           }
           if (state is Navigatetosignpage) {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SigninScreen()));
+                MaterialPageRoute(builder: (context) => SigninScreen()));
           }
         },
         child: Scaffold(
