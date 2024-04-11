@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich/blocs/login_bloc.dart/login_bloc.dart';
 import 'package:vehicanich/screens/forgot_password/forgot_password.dart';
+import 'package:vehicanich/services/firebase_auth_implementation/firebase_auth_service.dart';
 import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/app_googlebutton.dart';
@@ -12,9 +14,14 @@ import 'package:vehicanich/widgets/login_screen_widgets/forgot_button.dart';
 import 'package:vehicanich/widgets/login_screen_widgets/login_text.dart';
 import 'package:vehicanich/utils/app_custom_button.dart';
 
+// ignore: must_be_immutable
 class Loginscreen extends StatelessWidget {
-  const Loginscreen({super.key});
+  Loginscreen({super.key});
 
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  final FirebaseAuthService auth = FirebaseAuthService();
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginBlocState>(
@@ -39,14 +46,16 @@ class Loginscreen extends StatelessWidget {
                 const LoginScreenMainText(),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.05, context)),
-                const Inputfield(
+                Inputfield(
                   hinttext: 'Enter your email',
+                  controller: emailController,
                 ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
-                const Inputfield(
+                Inputfield(
                   icon: Icon(Icons.remove_red_eye_outlined),
                   hinttext: 'Enter your password',
+                  controller: passwordController,
                 ),
                 Forgetbutton(
                   function: () =>
@@ -56,8 +65,8 @@ class Loginscreen extends StatelessWidget {
                 CustomButton(
                   buttontextcolor: Myappallcolor().colorwhite,
                   text: 'Login',
-                  function: () =>
-                      context.read<LoginBloc>().add(LoginScreenButtonPressed()),
+                  function: () => signIn(context),
+                  // context.read<LoginBloc>().add(LoginScreenButtonPressed()),
                   fontSize: Mymediaquery().mediaqueryheight(0.02, context),
                   color: Myappallcolor().buttonforgroundcolor,
                 ),
@@ -80,5 +89,18 @@ class Loginscreen extends StatelessWidget {
             ),
           ),
         ));
+  }
+
+  signIn(BuildContext context) async {
+    String email = emailController.text;
+    String password = passwordController.text;
+    User? user = await auth.sighInWIthEmailAndPassword(email, password);
+    if (user != null) {
+      print('user is successfully signedIn');
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => BottomBar()));
+    } else {
+      print('some error happened');
+    }
   }
 }

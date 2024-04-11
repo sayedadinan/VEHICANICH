@@ -27,7 +27,9 @@ class CustomButton extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(10.0),
-        onTap: function,
+        onTap: () {
+          function(); // Invoke the function here
+        },
         child: Center(
           child: Text(
             text,

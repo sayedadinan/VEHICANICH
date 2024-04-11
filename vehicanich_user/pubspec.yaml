@@ -39,6 +39,8 @@ dependencies:
   bloc: ^8.1.4
   flutter_bloc: ^8.1.5
   google_nav_bar: ^5.0.6
+  firebase_core: ^2.29.0
+  firebase_auth: ^4.19.1
 
 dev_dependencies:
   flutter_test:
