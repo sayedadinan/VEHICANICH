@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vehicanich/blocs/bottom_nav/bottom_nav_bloc.dart';
+import 'package:vehicanich/blocs/bottom_nav_blocs/bottom_nav_bloc.dart';
 import 'package:vehicanich/screens/home_screen/home_screens.dart';
 import 'package:vehicanich/screens/search_screen/search_screen.dart';
 import 'package:vehicanich/screens/user_profile.dart/user_profile_screen.dart';

@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vehicanich/blocs/login_bloc.dart/login_bloc.dart';
-import 'package:vehicanich/screens/forgot_password/otp_screen.dart';
+import 'package:vehicanich/blocs/forgot_password_blocs/forgot_pass_bloc.dart';
+import 'package:vehicanich/blocs/forgot_password_blocs/forgot_pass_event.dart';
+import 'package:vehicanich/blocs/forgot_password_blocs/forgot_pass_state.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/app_custom_button.dart';
+import 'package:vehicanich/utils/app_snackbar.dart';
 import 'package:vehicanich/utils/app_textfields.dart';
 import 'package:vehicanich/utils/mediaquery.dart';
 import 'package:vehicanich/widgets/forgot_screen_widgets/forgot_text.dart';
 
 class Forgotpasswordscreen extends StatelessWidget {
-  const Forgotpasswordscreen({super.key});
+  Forgotpasswordscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginBloc, LoginBlocState>(
+    TextEditingController emailcontroller = TextEditingController();
+    return BlocListener<ForgotBloc, ForgotButtonState>(
         listener: (context, state) {
-          if (state is NavigateToOtpPage) {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Otpverificationpage()));
+          if (state is EmailVerified) {
+            Navigator.of(context).pop();
           }
+          if (state is EmailLoadingState) {
+            const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is Emailtakingerror) {
+            CustomSnackBar(message: state.error, backgroundColor: Colors.red);
+          }
+          // if (state is NavigateToOtpPage) {
+          //   Navigator.push(context,
+          //       MaterialPageRoute(builder: (context) => Otpverificationpage()));
+          // }
         },
         child: Scaffold(
           backgroundColor: Myappallcolor().appbackgroundcolor,
@@ -41,7 +54,8 @@ class Forgotpasswordscreen extends StatelessWidget {
                 ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.07, context)),
-                const Inputfield(
+                Inputfield(
+                  controller: emailcontroller,
                   label: 'Enter your phone',
                   hinttext: '',
                 ),
@@ -51,8 +65,8 @@ class Forgotpasswordscreen extends StatelessWidget {
                   color: Myappallcolor().buttonforgroundcolor,
                   buttontextcolor: Myappallcolor().colorwhite,
                   fontSize: Mymediaquery().mediaqueryheight(0.02, context),
-                  function: () =>
-                      context.read<LoginBloc>().add(SendcodeButtonPressed()),
+                  function: () => context.read<ForgotBloc>().add(
+                      SendCodeButtonPressed(emailcontroller: emailcontroller)),
                   text: 'Send Code',
                 ),
               ],

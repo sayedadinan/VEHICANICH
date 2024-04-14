@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vehicanich/blocs/login_bloc.dart/login_bloc.dart';
+import 'package:vehicanich/blocs/login_bloc/login_bloc.dart';
 import 'package:vehicanich/screens/forgot_password/creating_new_password.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/app_custom_button.dart';

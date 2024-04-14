@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vehicanich/blocs/login_bloc.dart/login_bloc.dart';
+import 'package:vehicanich/blocs/login_bloc/login_bloc.dart';
 import 'package:vehicanich/screens/forgot_password/forgot_password.dart';
 import 'package:vehicanich/services/firebase_auth_implementation/firebase_auth_service.dart';
 import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart';
@@ -20,7 +20,6 @@ class Loginscreen extends StatelessWidget {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
   final FirebaseAuthService auth = FirebaseAuthService();
   @override
   Widget build(BuildContext context) {
@@ -47,13 +46,14 @@ class Loginscreen extends StatelessWidget {
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.05, context)),
                 Inputfield(
+                  keyboardType: TextInputType.emailAddress,
                   hinttext: 'Enter your email',
                   controller: emailController,
                 ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
                 Inputfield(
-                  icon: Icon(Icons.remove_red_eye_outlined),
+                  icon: const Icon(Icons.remove_red_eye_outlined),
                   hinttext: 'Enter your password',
                   controller: passwordController,
                 ),
@@ -66,7 +66,6 @@ class Loginscreen extends StatelessWidget {
                   buttontextcolor: Myappallcolor().colorwhite,
                   text: 'Login',
                   function: () => signIn(context),
-                  // context.read<LoginBloc>().add(LoginScreenButtonPressed()),
                   fontSize: Mymediaquery().mediaqueryheight(0.02, context),
                   color: Myappallcolor().buttonforgroundcolor,
                 ),
@@ -78,7 +77,9 @@ class Loginscreen extends StatelessWidget {
                 CustomGoogleButton(
                     bordercolor: Myappallcolor().colorwhite,
                     color: Colors.transparent,
-                    function: () {},
+                    function: () {
+                      signInWithGoogle(context);
+                    },
                     text: 'Login with google',
                     fontSize: Mymediaquery().mediaqueryheight(0.02, context),
                     buttontextcolor: Myappallcolor().colorwhite),
@@ -97,6 +98,7 @@ class Loginscreen extends StatelessWidget {
     User? user = await auth.sighInWIthEmailAndPassword(email, password);
     if (user != null) {
       print('user is successfully signedIn');
+      // ignore: use_build_context_synchronously
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => BottomBar()));
     } else {

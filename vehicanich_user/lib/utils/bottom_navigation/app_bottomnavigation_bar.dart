@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:vehicanich/blocs/bottom_nav/bottom_nav_bloc.dart';
+import 'package:vehicanich/blocs/bottom_nav_blocs/bottom_nav_bloc.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/mediaquery.dart';
 
@@ -31,7 +31,6 @@ class CustomBottomNavigationbar extends StatelessWidget {
               activeColor: Myappallcolor().appbackgroundcolor,
               tabBackgroundColor: Myappallcolor().colorwhite,
               curve: Curves.easeInOutQuad,
-              duration: const Duration(seconds: 1),
               hoverColor: Myappallcolor().buttonforgroundcolor,
               rippleColor: Myappallcolor().buttonforgroundcolor,
               tabActiveBorder: Border.all(
