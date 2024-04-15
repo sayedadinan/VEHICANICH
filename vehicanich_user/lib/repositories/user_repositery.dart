@@ -26,5 +26,11 @@ class UserRepositery {
     }
   }
 
-  updateuser() {}
+  updateuser(UserModel user) async {
+    try {
+      await db.collection('users').doc(user.id).update(user.toJson());
+    } catch (e) {
+      print('error is there for updation $e');
+    }
+  }
 }

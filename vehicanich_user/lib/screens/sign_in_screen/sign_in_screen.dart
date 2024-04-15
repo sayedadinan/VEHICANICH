@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich/blocs/sign_up_blocs/sign_up_bloc.dart';
 import 'package:vehicanich/models/user_model.dart';
+import 'package:vehicanich/screens/verify_screen/verify_email_screen.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/app_snackbar.dart';
 import 'package:vehicanich/utils/app_textfields.dart';
 import 'package:vehicanich/utils/app_textvalidators.dart';
-import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart';
 import 'package:vehicanich/utils/mediaquery.dart';
 import 'package:vehicanich/widgets/login_screen_widgets/login_text.dart';
 import 'package:vehicanich/utils/app_custom_button.dart';
@@ -31,13 +31,20 @@ class SigninScreen extends StatelessWidget {
                 );
               }
               if (state is SignUpError) {
-                CustomSnackBar(
-                  message: state.text,
+                const CustomSnackBar(
+                  message:
+                      'with this username or email already a account is exist',
                   backgroundColor: Colors.red,
                 ).show(context);
-              } else if (state is SignUpSuccess) {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => BottomBar()));
+              }
+              // } else if (state is SignUpEmailNotVerified) {
+              //   // final currentUser = FirebaseAuth.instance.currentUser;
+              //   Navigator.of(context).push(
+              //       MaterialPageRoute(builder: (context) => VerifyEmailPage()));
+              // }
+              if (state is SignUpSuccess) {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const VerifyEmail()));
               }
             },
             child: Scaffold(
@@ -84,17 +91,16 @@ class SigninScreen extends StatelessWidget {
                     CustomButton(
                       buttontextcolor: Myappallcolor().colorwhite,
                       text: 'Register',
-                      function: () {
+                      function: () async {
                         if (signupKey.currentState!.validate()) {
                           final user = UserModel(
-                              userName: userNameController.text.trim(),
-                              email: emailController.text.trim(),
-                              password: passwordController.text.trim());
+                            userName: userNameController.text.trim(),
+                            email: emailController.text.trim(),
+                            password: passwordController.text.trim(),
+                          );
                           context
                               .read<SignUpBLoc>()
                               .add(SignUpButtonPressed(user: user));
-                        } else {
-                          return;
                         }
                       },
                       fontSize: Mymediaquery().mediaqueryheight(0.02, context),

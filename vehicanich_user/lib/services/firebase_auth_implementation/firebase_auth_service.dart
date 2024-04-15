@@ -6,6 +6,7 @@ import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart'; // I
 
 class FirebaseAuthService {
   FirebaseAuth auth = FirebaseAuth.instance;
+  final currentUser = FirebaseAuth.instance.currentUser;
   Future<User?> sighUpWIthEmailAndPassword(
       String email, String password) async {
     try {
@@ -32,26 +33,16 @@ class FirebaseAuthService {
   }
 }
 
-// Future<UserCredential> signInWithGoogle() async {
-//   // Trigger the authentication flow
-//   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
-//   // Obtain the auth details from the request
-//   final GoogleSignInAuthentication? googleAuth =
-//       await googleUser?.authentication;
-
-//   // Create a new credential
-//   final credential = GoogleAuthProvider.credential(
-//     accessToken: googleAuth?.accessToken,
-//     idToken: googleAuth?.idToken,
-//   );
-
-//   // Once signed in, return the UserCredential
-//   UserCredential userCredential =
-//       await FirebaseAuth.instance.signInWithCredential(credential);
-//   print(userCredential.user?.displayName);
-//   return userCredential;
-// }
+Future<void> sendEmailVerification() async {
+  try {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    if (currentUser != null && !currentUser.emailVerified) {
+      await currentUser.sendEmailVerification();
+    }
+  } catch (e) {
+    print('Failed to send verification email: $e');
+  }
+}
 
 Future<void> signInWithGoogle(BuildContext context) async {
   // Trigger the authentication flow

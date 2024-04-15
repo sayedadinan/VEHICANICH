@@ -1,6 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vehicanich/services/firebase_auth_implementation/firebase_auth_service.dart';
 part 'login_event.dart';
 part 'login_state.dart';
+
+final FirebaseAuthService auth = FirebaseAuthService();
 
 class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
   LoginBloc() : super(InitialBlocState()) {
@@ -23,7 +28,18 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
   }
 
   loginScreenButtonPressed(
-      LoginScreenButtonPressed event, Emitter<LoginBlocState> emit) {
-    emit(NavigateToHome());
+      LoginScreenButtonPressed event, Emitter<LoginBlocState> emit) async {
+    try {
+      User? user = await auth.sighInWIthEmailAndPassword(
+          event.email.text, event.password.text);
+      if (user != null) {
+        print('user login successful');
+        emit(NavigateToHome());
+      } else {
+        print('something went wrong');
+      }
+    } catch (e) {
+      emit(LoginErrorHappened(error: e.toString()));
+    }
   }
 }

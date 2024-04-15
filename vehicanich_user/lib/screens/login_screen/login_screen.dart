@@ -1,9 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich/blocs/login_bloc/login_bloc.dart';
 import 'package:vehicanich/screens/forgot_password/forgot_password.dart';
 import 'package:vehicanich/services/firebase_auth_implementation/firebase_auth_service.dart';
+import 'package:vehicanich/utils/app_snackbar.dart';
 import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/app_googlebutton.dart';
@@ -35,6 +35,11 @@ class Loginscreen extends StatelessWidget {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => BottomBar()));
           }
+          if (state is LoginErrorHappened) {
+            CustomSnackBar(
+                message: state.error,
+                backgroundColor: Myappallcolor().emergencybuttoncolor);
+          }
         },
         child: Scaffold(
           backgroundColor: Myappallcolor().appbackgroundcolor,
@@ -65,7 +70,10 @@ class Loginscreen extends StatelessWidget {
                 CustomButton(
                   buttontextcolor: Myappallcolor().colorwhite,
                   text: 'Login',
-                  function: () => signIn(context),
+                  function: () => context.read<LoginBloc>().add(
+                      LoginScreenButtonPressed(
+                          email: emailController,
+                          password: passwordController)),
                   fontSize: Mymediaquery().mediaqueryheight(0.02, context),
                   color: Myappallcolor().buttonforgroundcolor,
                 ),
@@ -92,17 +100,17 @@ class Loginscreen extends StatelessWidget {
         ));
   }
 
-  signIn(BuildContext context) async {
-    String email = emailController.text;
-    String password = passwordController.text;
-    User? user = await auth.sighInWIthEmailAndPassword(email, password);
-    if (user != null) {
-      print('user is successfully signedIn');
-      // ignore: use_build_context_synchronously
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => BottomBar()));
-    } else {
-      print('some error happened');
-    }
-  }
+  // signIn(BuildContext context) async {
+  //   String email = emailController.text;
+  //   String password = passwordController.text;
+  //   User? user = await auth.sighInWIthEmailAndPassword(email, password);
+  //   if (user != null) {
+  //     print('user is successfully signedIn');
+  //     // ignore: use_build_context_synchronously
+  //     Navigator.of(context)
+  //         .push(MaterialPageRoute(builder: (context) => BottomBar()));
+  //   } else {
+  //     print('some error happened');
+  //   }
+  // }
 }

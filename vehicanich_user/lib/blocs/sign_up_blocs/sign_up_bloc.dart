@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich/models/user_model.dart';
 import 'package:vehicanich/repositories/user_repositery.dart';
@@ -9,6 +10,7 @@ class SignUpBLoc extends Bloc<SignUpEvent, SignUpState> {
   SignUpBLoc() : super(SignUpInitial()) {
     on<SignUpButtonPressed>(signInButtonPressed);
   }
+  final currentUser = FirebaseAuth.instance.currentUser;
   signInButtonPressed(
       SignUpButtonPressed event, Emitter<SignUpState> emit) async {
     emit(SignUpLoading());
@@ -18,6 +20,7 @@ class SignUpBLoc extends Bloc<SignUpEvent, SignUpState> {
         event.user.email,
         event.user.password,
       );
+      // await sendEmailVerification();
       final user = UserModel(
           userName: event.user.userName,
           password: event.user.password,

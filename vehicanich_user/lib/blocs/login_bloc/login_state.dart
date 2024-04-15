@@ -15,3 +15,9 @@ class NavigateToRegisterNow extends LoginBlocState {}
 class NavigateToOtpPage extends LoginBlocState {}
 
 class NavigateToNewpassword extends LoginBlocState {}
+
+class LoginErrorHappened extends LoginBlocState {
+  final String error;
+
+  LoginErrorHappened({required this.error});
+}

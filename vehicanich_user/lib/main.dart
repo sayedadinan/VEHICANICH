@@ -8,8 +8,9 @@ import 'package:vehicanich/blocs/login_bloc/login_bloc.dart';
 import 'package:vehicanich/blocs/onboarding_blocs/onboarding_bloc.dart';
 import 'package:vehicanich/blocs/sign_up_blocs/sign_up_bloc.dart';
 import 'package:vehicanich/blocs/user_details_blocs/user_detail_bloc.dart';
+import 'package:vehicanich/blocs/user_updation_blocs/user_updation_bloc.dart';
 import 'package:vehicanich/firebase_options.dart';
-import 'package:vehicanich/screens/onboarding/login_or_sign.dart';
+import 'package:vehicanich/screens/onboarding/onboarding_screen.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart';
 
@@ -25,6 +26,7 @@ void main() async {
     BlocProvider(create: (context) => SignUpBLoc()),
     BlocProvider(create: (context) => ForgotBloc()),
     BlocProvider(create: (context) => UserDetailsBloc()),
+    BlocProvider(create: (context) => UserDetailsUpdationBloc()),
   ], child: const MyApp()));
 }
 
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasData) {
             return BottomBar();
           } else {
-            return const Loginorsign();
+            return Splashscreen();
           }
         },
       ),

@@ -4,7 +4,12 @@ class LoginBlocEvent {}
 
 class ForgotButtonPressed extends LoginBlocEvent {}
 
-class LoginScreenButtonPressed extends LoginBlocEvent {}
+class LoginScreenButtonPressed extends LoginBlocEvent {
+  final TextEditingController email;
+  final TextEditingController password;
+
+  LoginScreenButtonPressed({required this.email, required this.password});
+}
 
 class LoginWithGoogleButtonPressed extends LoginBlocEvent {}
 

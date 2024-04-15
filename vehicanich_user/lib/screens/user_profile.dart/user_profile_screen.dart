@@ -19,10 +19,6 @@ class UserProfileScreen extends StatelessWidget {
     userDetailsBloc.add(UserDataLoaded(email: currentUser!.email!));
     return BlocBuilder<UserDetailsBloc, UserDetailsState>(
       builder: (context, state) {
-        // if (state is NavigateToEditingPage) {
-        //   Navigator.of(context).push(MaterialPageRoute(
-        //       builder: (context) => const ProfileEditingPage()));
-        // }
         if (state is UserDetailsLoading) {
           return Scaffold(
             backgroundColor: Myappallcolor().appbackgroundcolor,
@@ -76,10 +72,7 @@ class UserProfileScreen extends StatelessWidget {
                       color: Myappallcolor().buttonforgroundcolor,
                       function: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const ProfileEditingPage()));
-                        // context
-                        //     .read<UserDetailsBloc>()
-                        //     .add(UserDetailsEditingButtonClicked());
+                            builder: (context) => ProfileEditingPage()));
                       },
                       text: 'Edit',
                       fontSize: Mymediaquery().mediaquerywidth(0.02, context),
