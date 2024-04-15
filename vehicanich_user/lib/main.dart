@@ -1,14 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vehicanich/blocs/bottom_nav/bottom_nav_bloc.dart';
-import 'package:vehicanich/blocs/login_bloc.dart/login_bloc.dart';
+import 'package:vehicanich/blocs/bottom_nav_blocs/bottom_nav_bloc.dart';
+import 'package:vehicanich/blocs/forgot_password_blocs/forgot_pass_bloc.dart';
+import 'package:vehicanich/blocs/login_bloc/login_bloc.dart';
 import 'package:vehicanich/blocs/onboarding_blocs/onboarding_bloc.dart';
+import 'package:vehicanich/blocs/sign_up_blocs/sign_up_bloc.dart';
+import 'package:vehicanich/blocs/user_details_blocs/user_detail_bloc.dart';
+import 'package:vehicanich/blocs/user_updation_blocs/user_updation_bloc.dart';
 import 'package:vehicanich/firebase_options.dart';
 import 'package:vehicanich/screens/onboarding/onboarding_screen.dart';
 import 'package:vehicanich/utils/app_colors.dart';
+import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart';
 
-void main(List<String> args) async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -16,7 +22,11 @@ void main(List<String> args) async {
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => OnboardingBloc()),
     BlocProvider(create: (context) => LoginBloc()),
-    BlocProvider(create: (context) => BottomNavigationBloc())
+    BlocProvider(create: (context) => BottomNavigationBloc()),
+    BlocProvider(create: (context) => SignUpBLoc()),
+    BlocProvider(create: (context) => ForgotBloc()),
+    BlocProvider(create: (context) => UserDetailsBloc()),
+    BlocProvider(create: (context) => UserDetailsUpdationBloc()),
   ], child: const MyApp()));
 }
 
@@ -31,7 +41,16 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
               seedColor: Myappallcolor().buttonforgroundcolor),
           useMaterial3: true),
-      home: Splashscreen(),
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return BottomBar();
+          } else {
+            return Splashscreen();
+          }
+        },
+      ),
     );
   }
 }

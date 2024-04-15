@@ -28,6 +28,7 @@ class Inputfield extends StatelessWidget {
       child: TextFormField(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         controller: controller,
+        validator: validator,
         decoration: InputDecoration(
           fillColor: Myappallcolor().textcolor,
           filled: true,
@@ -38,7 +39,6 @@ class Inputfield extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-        validator: validator,
         keyboardType: keyboardType,
       ),
     );

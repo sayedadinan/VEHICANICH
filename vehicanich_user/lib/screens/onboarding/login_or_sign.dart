@@ -34,7 +34,7 @@ class Loginorsign extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(
-                    width: Mymediaquery().mediaquerywidth(0.18, context),
+                    width: Mymediaquery().mediaquerywidth(0.17, context),
                   ),
                   Myonboardmaintitle(
                     size: Mymediaquery().mediaquerywidth(0.05, context),

@@ -1,0 +1,1 @@
+ D:\\sayed\\Documents\\VEHICANICH\\vehicanich_shop\\.dart_tool\\flutter_build\\030ecd7a3d84b336b1f9019f76bfddc3\\native_assets.yaml: 
