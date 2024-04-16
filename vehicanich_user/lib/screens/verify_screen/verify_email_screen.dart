@@ -1,109 +1,3 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
-// import 'package:vehicanich/utils/app_colors.dart';
-// import 'package:vehicanich/utils/app_snackbar.dart';
-// import 'package:vehicanich/utils/bottom_navigation/bottom_navigation.dart';
-// import 'package:vehicanich/utils/mediaquery.dart';
-
-// class VerifyEmailPage extends StatefulWidget {
-//   const VerifyEmailPage({Key? key}) : super(key: key);
-
-//   @override
-//   _VerifyEmailPageState createState() => _VerifyEmailPageState();
-// }
-
-// class _VerifyEmailPageState extends State<VerifyEmailPage> {
-//   late User? _user;
-//   bool _isEmailVerified = false;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _user = FirebaseAuth.instance.currentUser;
-//     if (_user != null && !_user!.emailVerified) {
-//       sendVerificationEmail();
-//     } else {
-//       setState(() {
-//         _isEmailVerified = true;
-//       });
-//     }
-//   }
-
-//   final user = FirebaseAuth.instance.currentUser!.reload();
-//   Future<void> sendVerificationEmail() async {
-//     try {
-//       await _user!.sendEmailVerification();
-//       setState(() {
-//         _isEmailVerified =
-//             false; // Set to false as email verification is not complete yet
-//       });
-//     } catch (e) {
-//       print('Failed to send verification email: $e');
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Myappallcolor().appbackgroundcolor,
-//       appBar: AppBar(
-//         backgroundColor: Colors.transparent,
-//         centerTitle: true,
-//         title: Text(
-//           'Verify Email',
-//           style: TextStyle(color: Myappallcolor().colorwhite),
-//         ),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             Text(
-//               _isEmailVerified
-//                   ? 'Your email has been verified.'
-//                   : 'An email verification link has been sent to ${_user!.email}.',
-//               textAlign: TextAlign.center,
-//               style: TextStyle(
-//                   color: Myappallcolor().colorwhite,
-//                   fontSize: Mymediaquery().mediaquerywidth(0.02, context)),
-//             ),
-//             const SizedBox(height: 20),
-//             if (!_isEmailVerified)
-//               ElevatedButton(
-//                 onPressed: sendVerificationEmail,
-//                 child: Text(
-//                   'Resend Verification Email',
-//                 ),
-//               ),
-//             ElevatedButton(
-//               onPressed: navigating,
-//               child: Text(
-//                 'continue',
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-
-//   navigating() async {
-//     final user = FirebaseAuth.instance.currentUser; // Retrieve user here
-//     print('arshad ${user!.emailVerified}');
-//     print('worded');
-//     if (user.emailVerified) {
-//       await Navigator.of(context)
-//           .push(MaterialPageRoute(builder: (context) => BottomBar()));
-//     } else {
-//       print('it is not verified');
-//       CustomSnackBar(
-//               message: 'its not verified',
-//               backgroundColor: Myappallcolor().emergencybuttoncolor)
-//           .show(context);
-//     }
-//   }
-// }import 'dart:async';
-
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -126,7 +20,6 @@ class _VerifyEmailState extends State<VerifyEmail> {
   Timer? timer;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
     if (!isEmailVerified) {
@@ -167,7 +60,6 @@ class _VerifyEmailState extends State<VerifyEmail> {
             backgroundColor: Myappallcolor().appbackgroundcolor,
           ),
           body: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 height: Mymediaquery().mediaqueryheight(0.02, context),
@@ -222,7 +114,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
                     onPressed: () {
                       sendVerificationEmail();
                     },
-                    child: Text(
+                    child: const Text(
                       'Resent Email',
                     ),
                   ),

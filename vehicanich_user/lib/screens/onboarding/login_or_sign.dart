@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich/blocs/onboarding_blocs/onboarding_bloc.dart';
-import 'package:vehicanich/screens/login_screen/login_screen.dart';
 import 'package:vehicanich/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:vehicanich/utils/app_colors.dart';
 import 'package:vehicanich/utils/mediaquery.dart';
 import 'package:vehicanich/utils/app_custom_button.dart';
+import 'package:vehicanich/utils/page_transition/page_fade_transition.dart';
 import 'package:vehicanich/widgets/onboarding_widgets/onboarding_texts.dart';
 
 class Loginorsign extends StatelessWidget {
@@ -15,12 +15,19 @@ class Loginorsign extends StatelessWidget {
     return BlocListener<OnboardingBloc, OnboardingBlocState>(
         listener: (context, state) {
           if (state is NavigatetoLoginPage) {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Loginscreen()));
+            Navigator.pushReplacement(
+              context,
+              FadeTransitionPageRoute(
+                child: const Loginorsign(),
+              ),
+            );
           }
           if (state is Navigatetosignpage) {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SigninScreen()));
+            Navigator.pushReplacement(
+                context,
+                FadeTransitionPageRoute(
+                  child: SigninScreen(),
+                ));
           }
         },
         child: Scaffold(

@@ -56,7 +56,7 @@ class Forgotpasswordscreen extends StatelessWidget {
                     height: Mymediaquery().mediaqueryheight(0.07, context)),
                 Inputfield(
                   controller: emailcontroller,
-                  label: 'Enter your phone',
+                  label: 'Enter your email',
                   hinttext: '',
                 ),
                 SizedBox(
@@ -67,7 +67,7 @@ class Forgotpasswordscreen extends StatelessWidget {
                   fontSize: Mymediaquery().mediaqueryheight(0.02, context),
                   function: () => context.read<ForgotBloc>().add(
                       SendCodeButtonPressed(emailcontroller: emailcontroller)),
-                  text: 'Send Code',
+                  text: 'Send Link',
                 ),
               ],
             ),

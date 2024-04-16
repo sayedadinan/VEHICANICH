@@ -36,6 +36,7 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
         print('user login successful');
         emit(NavigateToHome());
       } else {
+        emit(LoginErrorHappened(error: 'email or password is incorrect'));
         print('something went wrong');
       }
     } catch (e) {
