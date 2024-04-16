@@ -39,6 +39,8 @@ dependencies:
   bloc: ^8.1.4
   flutter_bloc: ^8.1.5
   page_transition: ^2.1.0
+  time_picker_widget: ^1.0.0+10
+  google_maps_flutter: ^2.6.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,7 @@ flutter:
     - assets/images/onboarding3.png
     - assets/images/car_workshop_for_splash-removebg-preview 1.png
     - assets/images/workshop image for mechanicapp.png
+    - assets/images/dslr-camera.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

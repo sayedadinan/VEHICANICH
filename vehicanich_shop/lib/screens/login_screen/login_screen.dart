@@ -24,10 +24,6 @@ class LoginScreen extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) => ForgotPasswordScreen()));
           }
-          // if (state is NavigateToHome) {
-          //   Navigator.push(
-          //       context, MaterialPageRoute(builder: (context) => BottomBar()));
-          // }
         },
         child: Scaffold(
           backgroundColor: Appallcolor().appbackgroundcolor,

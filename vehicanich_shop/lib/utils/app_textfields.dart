@@ -10,6 +10,7 @@ class Inputfield extends StatelessWidget {
   final String? Function(String?)? validator;
   final int? maxLines;
   final Icon? icon;
+  final Function()? onTap;
   const Inputfield({
     this.controller,
     Key? key,
@@ -19,6 +20,7 @@ class Inputfield extends StatelessWidget {
     this.validator,
     this.icon,
     this.maxLines,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -28,6 +30,7 @@ class Inputfield extends StatelessWidget {
           left: Mymediaquery().mediaquerywidth(0.02, context),
           right: Mymediaquery().mediaquerywidth(0.02, context)),
       child: TextFormField(
+        onTap: onTap,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         controller: controller,
         decoration: InputDecoration(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:vehicanich_shop/screens/register_screen/register_screen.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
 import 'package:vehicanich_shop/utils/mediaquery.dart';
+import 'package:vehicanich_shop/utils/page_transition/page_fade_transition.dart';
 import 'package:vehicanich_shop/widgets/onboarding_widgets/onboardinng_texts.dart';
 
 class CustomQuestion extends StatelessWidget {
@@ -17,9 +20,15 @@ class CustomQuestion extends StatelessWidget {
           "Don't have an account?",
           style: TextStyle(color: Appallcolor().textcolor),
         ),
-        Text(
-          ' Register Now',
-          style: TextStyle(color: Appallcolor().buttonforgroundcolor),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushReplacement(
+                FadeTransitionPageRoute(child: const RegisterScreen()));
+          },
+          child: Text(
+            ' Register Now',
+            style: TextStyle(color: Appallcolor().buttonforgroundcolor),
+          ),
         )
       ],
     );

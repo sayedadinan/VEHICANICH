@@ -9,15 +9,18 @@ class AppColor {
   final Color appbarbackgroundcolor;
   final Color emergencybuttoncolor;
   final Color bottomnavigationforcolor;
-  AppColor(
-      {required this.appbackgroundcolor,
-      required this.bottomnavigationforcolor,
-      required this.textcolor,
-      required this.buttonforgroundcolor,
-      required this.colorwhite,
-      required this.colorblack,
-      required this.appbarbackgroundcolor,
-      required this.emergencybuttoncolor});
+  final Color placeholderimagecolor;
+  AppColor({
+    required this.appbackgroundcolor,
+    required this.bottomnavigationforcolor,
+    required this.textcolor,
+    required this.buttonforgroundcolor,
+    required this.colorwhite,
+    required this.colorblack,
+    required this.appbarbackgroundcolor,
+    required this.emergencybuttoncolor,
+    required this.placeholderimagecolor,
+  });
 }
 
 final class Appallcolor extends AppColor {
@@ -30,5 +33,6 @@ final class Appallcolor extends AppColor {
             colorwhite: Colors.white,
             appbackgroundcolor: Colors.black,
             textcolor: const Color.fromARGB(255, 167, 199, 198),
-            buttonforgroundcolor: const Color.fromARGB(255, 17, 187, 180));
+            buttonforgroundcolor: const Color.fromARGB(255, 17, 187, 180),
+            placeholderimagecolor: const Color.fromARGB(255, 198, 198, 199));
 }

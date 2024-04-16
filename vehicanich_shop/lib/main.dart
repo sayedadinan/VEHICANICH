@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich_shop/blocs/login_bloc/login_bloc.dart';
 import 'package:vehicanich_shop/blocs/onboarding_bloc/onboarding_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
 import 'package:vehicanich_shop/screens/onboarding_screen/onboarding_screen.dart';
+import 'package:vehicanich_shop/utils/app_colors.dart';
 
 void main(List<String> args) {
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => OnboardingBloc()),
-    BlocProvider(create: (context) => LoginBloc())
+    BlocProvider(create: (context) => LoginBloc()),
+    BlocProvider(create: (context) => LocationBLoc())
   ], child: const MyApp()));
 }
 
@@ -20,7 +23,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Appallcolor().buttonforgroundcolor),
         useMaterial3: true,
       ),
       home: OnboardingScreen(),
