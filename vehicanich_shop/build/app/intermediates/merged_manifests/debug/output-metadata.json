@@ -4,7 +4,7 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.vehicanich_shop",
+  "applicationId": "in.shop.vehicanich_shop",
   "variantName": "debug",
   "elements": [
     {

@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.vehicanich_shop"
+3    package="in.shop.vehicanich_shop"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -15,118 +15,291 @@
 15    <uses-permission android:name="android.permission.INTERNET" />
 15-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\debug\AndroidManifest.xml:6:5-66
 15-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\debug\AndroidManifest.xml:6:22-64
-16    <!--
-17     Required to query activities that can process text, see:
-18         https://developer.android.com/training/package-visibility?hl=en and
-19         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
-20
-21         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
-22    -->
-23    <queries>
-23-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:40:5-45:15
-24        <intent>
-24-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:41:9-44:18
-25            <action android:name="android.intent.action.PROCESS_TEXT" />
-25-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:42:13-72
-25-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:42:21-70
-26
-27            <data android:mimeType="text/plain" />
-27-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:43:13-50
-27-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:43:19-48
-28        </intent>
-29        <!-- Needs to be explicitly declared on Android R+ -->
-30        <package android:name="com.google.android.apps.maps" />
-30-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
-30-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
-31    </queries> <!-- Include required permissions for Google Maps API to run. -->
-32    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-32-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
-32-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:22-76
-33
-34    <uses-feature
-34-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
-35        android:glEsVersion="0x00020000"
-35-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
-36        android:required="true" />
-36-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
-37
-38    <application
-39        android:name="android.app.Application"
-40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.6.0] C:\Users\sayed\.gradle\caches\transforms-3\2579a7de00054bf46a8dbc332552f622\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-41        android:debuggable="true"
-42        android:icon="@mipmap/ic_launcher"
-43        android:label="vehicanich_shop" >
-44        <activity
-45            android:name="com.example.vehicanich_shop.MainActivity"
-46            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-47            android:exported="true"
-48            android:hardwareAccelerated="true"
-49            android:launchMode="singleTop"
-50            android:theme="@style/LaunchTheme"
-51            android:windowSoftInputMode="adjustResize" >
-52
-53            <!--
-54                 Specifies an Android theme to apply to this Activity as soon as
-55                 the Android process has started. This theme is visible to the user
-56                 while the Flutter UI initializes. After that, this theme continues
-57                 to determine the Window background behind the Flutter UI.
-58            -->
-59            <meta-data
-60                android:name="io.flutter.embedding.android.NormalTheme"
-61                android:resource="@style/NormalTheme" />
-62
-63            <intent-filter>
-64                <action android:name="android.intent.action.MAIN" />
-65
-66                <category android:name="android.intent.category.LAUNCHER" />
-67            </intent-filter>
-68        </activity>
-69        <!--
-70             Don't delete the meta-data below.
-71             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-72        -->
-73        <meta-data
-74            android:name="flutterEmbedding"
-75            android:value="2" />
-76        <meta-data
-77            android:name="com.google.android.geo.API_KEY"
-78            android:value="AIzaSyDTQUMf_OFykIDu1b9slNrO6Y2Mgmz-7tc" />
-79
-80        <uses-library
-80-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\032f4dff274e516110d9363a9793a3e3\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-81            android:name="androidx.window.extensions"
-81-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\032f4dff274e516110d9363a9793a3e3\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-82            android:required="false" />
-82-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\032f4dff274e516110d9363a9793a3e3\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-83        <uses-library
-83-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\032f4dff274e516110d9363a9793a3e3\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-84            android:name="androidx.window.sidecar"
-84-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\032f4dff274e516110d9363a9793a3e3\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-85            android:required="false" /> <!-- Needs to be explicitly declared on P+ -->
-85-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\032f4dff274e516110d9363a9793a3e3\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-86        <uses-library
-86-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
-87            android:name="org.apache.http.legacy"
-87-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
-88            android:required="false" />
-88-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\b4788c193f13f554649fe724431810b5\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
-89
-90        <activity
-90-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sayed\.gradle\caches\transforms-3\456feef7530341a2c919967cc4dde951\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-91            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-91-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sayed\.gradle\caches\transforms-3\456feef7530341a2c919967cc4dde951\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-92            android:exported="false"
-92-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sayed\.gradle\caches\transforms-3\456feef7530341a2c919967cc4dde951\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-93-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sayed\.gradle\caches\transforms-3\456feef7530341a2c919967cc4dde951\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-94
-95        <meta-data
-95-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\sayed\.gradle\caches\transforms-3\1b9fcd709eea412754df2629217faace\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
-96            android:name="com.google.android.gms.version"
-96-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\sayed\.gradle\caches\transforms-3\1b9fcd709eea412754df2629217faace\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
-97            android:value="@integer/google_play_services_version" />
-97-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\sayed\.gradle\caches\transforms-3\1b9fcd709eea412754df2629217faace\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
-98    </application>
-99
-100</manifest>
+16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+16-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:2:5-77
+16-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:2:22-74
+17    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+17-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:3:5-84
+17-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:3:22-82
+18    <!--
+19 Required to query activities that can process text, see:
+20         https://developer.android.com/training/package-visibility?hl=en and
+21         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+22
+23         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+24    -->
+25    <queries>
+25-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:42:5-47:15
+26        <intent>
+26-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:43:9-46:18
+27            <action android:name="android.intent.action.PROCESS_TEXT" />
+27-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:44:13-72
+27-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:44:21-70
+28
+29            <data android:mimeType="text/plain" />
+29-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:45:13-50
+29-->D:\sayed\Documents\VEHICANICH\vehicanich_shop\android\app\src\main\AndroidManifest.xml:45:19-48
+30        </intent>
+31        <!-- Needs to be explicitly declared on Android R+ -->
+32        <package android:name="com.google.android.apps.maps" />
+32-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
+32-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
+33    </queries>
+34
+35    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+35-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+35-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+36    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Include required permissions for Google Maps API to run. -->
+36-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-79
+36-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-76
+37    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+37-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+37-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:22-76
+38
+39    <uses-feature
+39-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
+40        android:glEsVersion="0x00020000"
+40-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
+41        android:required="true" />
+41-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+42
+43    <permission
+43-->[androidx.core:core:1.10.1] C:\Users\sayed\.gradle\caches\transforms-3\4593e516147fb9b32bfd6294dd17fbd2\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+44        android:name="in.shop.vehicanich_shop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+44-->[androidx.core:core:1.10.1] C:\Users\sayed\.gradle\caches\transforms-3\4593e516147fb9b32bfd6294dd17fbd2\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+45        android:protectionLevel="signature" />
+45-->[androidx.core:core:1.10.1] C:\Users\sayed\.gradle\caches\transforms-3\4593e516147fb9b32bfd6294dd17fbd2\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+46
+47    <uses-permission android:name="in.shop.vehicanich_shop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+47-->[androidx.core:core:1.10.1] C:\Users\sayed\.gradle\caches\transforms-3\4593e516147fb9b32bfd6294dd17fbd2\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+47-->[androidx.core:core:1.10.1] C:\Users\sayed\.gradle\caches\transforms-3\4593e516147fb9b32bfd6294dd17fbd2\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+48
+49    <application
+50        android:name="android.app.Application"
+51        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+51-->[androidx.core:core:1.10.1] C:\Users\sayed\.gradle\caches\transforms-3\4593e516147fb9b32bfd6294dd17fbd2\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+52        android:debuggable="true"
+53        android:icon="@mipmap/ic_launcher"
+54        android:label="vehicanich_shop" >
+55        <activity
+56            android:name="com.example.vehicanich_shop.MainActivity"
+57            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+58            android:exported="true"
+59            android:hardwareAccelerated="true"
+60            android:launchMode="singleTop"
+61            android:theme="@style/LaunchTheme"
+62            android:windowSoftInputMode="adjustResize" >
+63
+64            <!--
+65                 Specifies an Android theme to apply to this Activity as soon as
+66                 the Android process has started. This theme is visible to the user
+67                 while the Flutter UI initializes. After that, this theme continues
+68                 to determine the Window background behind the Flutter UI.
+69            -->
+70            <meta-data
+71                android:name="io.flutter.embedding.android.NormalTheme"
+72                android:resource="@style/NormalTheme" />
+73
+74            <intent-filter>
+75                <action android:name="android.intent.action.MAIN" />
+76
+77                <category android:name="android.intent.category.LAUNCHER" />
+78            </intent-filter>
+79        </activity>
+80        <!--
+81             Don't delete the meta-data below.
+82             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+83        -->
+84        <meta-data
+85            android:name="flutterEmbedding"
+86            android:value="2" />
+87        <meta-data
+88            android:name="com.google.android.geo.API_KEY"
+89            android:value="AIzaSyDTQUMf_OFykIDu1b9slNrO6Y2Mgmz-7tc" />
+90
+91        <service
+91-->[:firebase_core] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+92            android:name="com.google.firebase.components.ComponentDiscoveryService"
+92-->[:firebase_core] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+93            android:directBootAware="true"
+93-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:32:13-43
+94            android:exported="false" >
+94-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:33:13-37
+95            <meta-data
+95-->[:firebase_core] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+96                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+96-->[:firebase_core] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[:firebase_core] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+98            <meta-data
+98-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:35:13-37:85
+99                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+99-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:36:17-109
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:37:17-82
+101        </service>
+102        <service
+102-->[:geolocator_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:56
+103            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+103-->[:geolocator_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-77
+104            android:enabled="true"
+104-->[:geolocator_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-35
+105            android:exported="false"
+105-->[:geolocator_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+106            android:foregroundServiceType="location" />
+106-->[:geolocator_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-53
+107
+108        <provider
+108-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-19:20
+109            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+109-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-82
+110            android:authorities="in.shop.vehicanich_shop.flutter.image_provider"
+110-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-74
+111            android:exported="false"
+111-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-37
+112            android:grantUriPermissions="true" >
+112-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-47
+113            <meta-data
+113-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-18:75
+114                android:name="android.support.FILE_PROVIDER_PATHS"
+114-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+115                android:resource="@xml/flutter_image_picker_file_paths" />
+115-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-72
+116        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+117        <service
+117-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-33:19
+118            android:name="com.google.android.gms.metadata.ModuleDependencies"
+118-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-78
+119            android:enabled="false"
+119-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-36
+120            android:exported="false" >
+120-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-37
+121            <intent-filter>
+121-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-28:29
+122                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+122-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:27:17-94
+122-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:27:25-91
+123            </intent-filter>
+124
+125            <meta-data
+125-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-32:36
+126                android:name="photopicker_activity:0:required"
+126-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-63
+127                android:value="" />
+127-->[:image_picker_android] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:32:17-33
+128        </service>
+129        <service
+129-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-17:56
+130            android:name="com.lyokone.location.FlutterLocationService"
+130-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-71
+131            android:enabled="true"
+131-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-35
+132            android:exported="false"
+132-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
+133            android:foregroundServiceType="location" /> <!-- Needs to be explicitly declared on P+ -->
+133-->[:location] D:\sayed\Documents\VEHICANICH\vehicanich_shop\build\location\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-53
+134        <uses-library
+134-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
+135            android:name="org.apache.http.legacy"
+135-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+136            android:required="false" />
+136-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\sayed\.gradle\caches\transforms-3\7eab6a18885d4d536e8756114fc336a4\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
+137
+138        <activity
+138-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sayed\.gradle\caches\transforms-3\de966d4e76d4574548125fc6abd01c46\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+139            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+139-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sayed\.gradle\caches\transforms-3\de966d4e76d4574548125fc6abd01c46\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:19-85
+140            android:exported="false"
+140-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sayed\.gradle\caches\transforms-3\de966d4e76d4574548125fc6abd01c46\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+141            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+141-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sayed\.gradle\caches\transforms-3\de966d4e76d4574548125fc6abd01c46\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+142
+143        <provider
+143-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:23:9-28:39
+144            android:name="com.google.firebase.provider.FirebaseInitProvider"
+144-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:24:13-77
+145            android:authorities="in.shop.vehicanich_shop.firebaseinitprovider"
+145-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:25:13-72
+146            android:directBootAware="true"
+146-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:26:13-43
+147            android:exported="false"
+147-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:27:13-37
+148            android:initOrder="100" />
+148-->[com.google.firebase:firebase-common:20.4.3] C:\Users\sayed\.gradle\caches\transforms-3\6eb3de00ece88264a65aea07132d5093\transformed\jetified-firebase-common-20.4.3\AndroidManifest.xml:28:13-36
+149
+150        <uses-library
+150-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\6b76b5315ad1c34794add6022d9107a2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+151            android:name="androidx.window.extensions"
+151-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\6b76b5315ad1c34794add6022d9107a2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+152            android:required="false" />
+152-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\6b76b5315ad1c34794add6022d9107a2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+153        <uses-library
+153-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\6b76b5315ad1c34794add6022d9107a2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+154            android:name="androidx.window.sidecar"
+154-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\6b76b5315ad1c34794add6022d9107a2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+155            android:required="false" />
+155-->[androidx.window:window:1.0.0-beta04] C:\Users\sayed\.gradle\caches\transforms-3\6b76b5315ad1c34794add6022d9107a2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+156
+157        <meta-data
+157-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\sayed\.gradle\caches\transforms-3\3d8c23b378611614bc6a7968ded801fb\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+158            android:name="com.google.android.gms.version"
+158-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\sayed\.gradle\caches\transforms-3\3d8c23b378611614bc6a7968ded801fb\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+159            android:value="@integer/google_play_services_version" />
+159-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\sayed\.gradle\caches\transforms-3\3d8c23b378611614bc6a7968ded801fb\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+160
+161        <provider
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+162            android:name="androidx.startup.InitializationProvider"
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
+163            android:authorities="in.shop.vehicanich_shop.androidx-startup"
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
+164            android:exported="false" >
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:27:13-37
+165            <meta-data
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+166                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+167                android:value="androidx.startup" />
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+168        </provider>
+169
+170        <receiver
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+171            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+171-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+172            android:directBootAware="false"
+172-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+173            android:enabled="true"
+173-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+174            android:exported="true"
+174-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+175            android:permission="android.permission.DUMP" >
+175-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+176            <intent-filter>
+176-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+177                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+177-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+177-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+178            </intent-filter>
+179            <intent-filter>
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+180                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+181            </intent-filter>
+182            <intent-filter>
+182-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+183                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+184            </intent-filter>
+185            <intent-filter>
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+186                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\sayed\.gradle\caches\transforms-3\ce7eb14e2e50af1cb42efd6c300d5b96\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+187            </intent-filter>
+188        </receiver>
+189    </application>
+190
+191</manifest>

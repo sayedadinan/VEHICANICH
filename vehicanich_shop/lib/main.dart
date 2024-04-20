@@ -1,16 +1,28 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich_shop/blocs/login_bloc/login_bloc.dart';
 import 'package:vehicanich_shop/blocs/onboarding_bloc/onboarding_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/closingtime_blocs/bloc/closingtime_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/image_blocs/image_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/startingtime_bloc.dart/bloc/time_bloc.dart';
+import 'package:vehicanich_shop/firebase_options.dart';
 import 'package:vehicanich_shop/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => OnboardingBloc()),
     BlocProvider(create: (context) => LoginBloc()),
-    BlocProvider(create: (context) => LocationBLoc())
+    BlocProvider(create: (context) => LocationBLoc()),
+    BlocProvider(create: (context) => StartingTimeBloc()),
+    BlocProvider(create: (context) => ClosingtimeBloc()),
+    BlocProvider(create: (context) => ImageBloc()),
   ], child: const MyApp()));
 }
 
@@ -31,8 +43,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
 
 // project_name/
 // ├── android/
