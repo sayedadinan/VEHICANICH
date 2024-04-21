@@ -62,3 +62,36 @@ class CustomAnimatedButton extends StatelessWidget {
     );
   }
 }
+
+// class CustomServiceTextField extends StatelessWidget {
+//   const CustomServiceTextField({
+//     Key? key,
+//     required this.enabled,
+//   }) : super(key: key);
+
+//   final bool enabled;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Expanded(
+//       child: SizedBox(
+//         height: 30,
+//         child: AnimatedToggleSwitch.dual(
+//           values: ['ON', 'OFF'], // Values for the switch
+//           onToggleCallback: (index) {
+//             // Callback when the switch is toggled
+//             print('Switch toggled to index $index');
+//           },
+//           height: 30, // Height of the switch
+//           width: 60, // Width of each toggle button
+//           borderRadius: 15, // Border radius of the switch
+//           enabledBackgroundColor: Colors.green, // Background color when enabled
+//           disabledBackgroundColor:
+//               Colors.grey, // Background color when disabled
+//           enabledTextColor: Colors.white, // Text color when enabled
+//           disabledTextColor: Colors.white, // Text color when disabled
+//         ),
+//       ),
+//     );
+//   }
+// }

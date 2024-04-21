@@ -23,7 +23,7 @@ class LicenceImagecontainer extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Appallcolor().textcolor,
-                  width: 5,
+                  width: 3,
                 ),
               ),
               width: Mymediaquery().mediaquerywidth(0.20, context),
@@ -49,22 +49,26 @@ class LicenceImagecontainer extends StatelessWidget {
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Appallcolor().textcolor,
-                            width: 5,
+                            width: 2,
                           ),
                         ),
                         width: Mymediaquery().mediaquerywidth(0.20, context),
                         height: Mymediaquery().mediaqueryheight(0.12, context),
-                        child: const Column(
+                        child: Column(
                           children: [
                             SizedBox(
                               height: 29,
                             ),
                             CustomText(
+                              width: FontWeight.w300,
+                              color: Appallcolor().textcolor,
                               fontSize: 14,
                               text:
                                   'Please upload your licence photo for validation Thank you',
                             ),
                             CustomText(
+                              width: FontWeight.w300,
+                              color: Appallcolor().textcolor,
                               fontSize: 14,
                               text: '(tap here)',
                             ),

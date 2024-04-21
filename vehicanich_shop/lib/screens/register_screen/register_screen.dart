@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
 import 'package:vehicanich_shop/screens/map_screen/map_page.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
 import 'package:vehicanich_shop/utils/app_loadingindicator.dart';
 import 'package:vehicanich_shop/utils/app_textfields.dart';
-import 'package:vehicanich_shop/utils/drop_down_with_textfield.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/banner_photo_container.dart';
-import 'package:vehicanich_shop/widgets/registration_widgets/service_button.dart';
+import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/service_button.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/licence_imagecontainer.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/logo_image_container.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/mm_image_container.dart';
@@ -84,16 +82,7 @@ class RegisterScreen extends StatelessWidget {
               const HintText(size: 0.04, text: 'logo photo'),
               const LogoImagecontainer(),
               SizedBox(height: Mymediaquery().mediaqueryheight(0.02, context)),
-              GestureDetector(
-                onTap: () {
-                  print('printed');
-                  Navigator.of(context).push(
-                      FadeTransitionPageRoute(child: DropdownWithTextField()));
-                },
-                child: BodyServiceContainer(
-                  text: 'body maintaince and Repair',
-                ),
-              ),
+              const BodyServiceContainer(text: 'body maintaince and Repair'),
             ]));
           },
         ));
