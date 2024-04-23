@@ -122,6 +122,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_advanced_segment",
+      "rootUri": "file:///C:/Users/sayed/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_advanced_segment-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_animated_button",
       "rootUri": "file:///C:/Users/sayed/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_animated_button-2.0.3",
       "packageUri": "lib/",
@@ -590,7 +596,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-04-20T11:45:36.690058Z",
+  "generated": "2024-04-21T12:05:29.802508Z",
   "generator": "pub",
   "generatorVersion": "3.3.3"
 }

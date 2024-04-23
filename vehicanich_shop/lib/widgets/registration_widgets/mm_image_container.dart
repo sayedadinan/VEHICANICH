@@ -17,6 +17,8 @@ class MMImageContainer extends StatelessWidget {
         if (state is ImageInitial && state.mmimagepath.isNotEmpty)
           Container(
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Appallcolor().textcolor,
               border: Border.all(
                 color: Appallcolor().textcolor,
                 width: 3,
@@ -37,6 +39,8 @@ class MMImageContainer extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Appallcolor().textcolor,
                 border: Border.all(
                   color: Appallcolor().textcolor,
                   width: 2,
@@ -50,8 +54,8 @@ class MMImageContainer extends StatelessWidget {
                     height: 29,
                   ),
                   CustomText(
-                    width: FontWeight.w300,
-                    color: Appallcolor().textcolor,
+                    width: FontWeight.w400,
+                    color: Appallcolor().colorblack,
                     fontSize: 14,
                     text:
                         'Please upload your merchandise mark to showcase your branding',

@@ -44,6 +44,8 @@ class LogoImagecontainer extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10, right: 10),
               child: Container(
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Appallcolor().textcolor,
                   border: Border.all(
                     color: Appallcolor().textcolor,
                     width: 2,
@@ -57,15 +59,15 @@ class LogoImagecontainer extends StatelessWidget {
                       height: 29,
                     ),
                     CustomText(
-                      width: FontWeight.w300,
-                      color: Appallcolor().textcolor,
+                      width: FontWeight.w400,
+                      color: Appallcolor().colorblack,
                       fontSize: 14,
                       text:
                           'Please upload your shop photo here for showing to customer',
                     ),
                     CustomText(
-                      width: FontWeight.w300,
-                      color: Appallcolor().textcolor,
+                      width: FontWeight.w400,
+                      color: Appallcolor().colorblack,
                       fontSize: 14,
                       text: '(tap here)',
                     ),

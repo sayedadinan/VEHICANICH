@@ -20,23 +20,26 @@ class CustomGoogleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: Mymediaquery().mediaquerywidth(0.43, context),
-      height: Mymediaquery().mediaqueryheight(0.07, context),
-      decoration: BoxDecoration(
-        border: Border.all(color: bordercolor),
-        color: color,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(10.0),
-        onTap: function,
-        child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: buttontextcolor,
-              fontSize: fontSize,
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Container(
+        width: double.infinity,
+        height: Mymediaquery().mediaqueryheight(0.07, context),
+        decoration: BoxDecoration(
+          border: Border.all(color: bordercolor),
+          color: color,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(10.0),
+          onTap: function,
+          child: Center(
+            child: Text(
+              text,
+              style: TextStyle(
+                color: buttontextcolor,
+                fontSize: fontSize,
+              ),
             ),
           ),
         ),

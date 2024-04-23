@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 part 'service_event.dart';
 part 'service_state.dart';
 
-class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
-  ServiceBloc()
+class BodyBloc extends Bloc<ServiceEvent, ServiceState> {
+  BodyBloc()
       : super(ServiceInitial(serviceNameList: [
           'Dent Repairings',
           'Scratch Removal',
@@ -11,8 +11,8 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
           'Body trimrepair'
         ], newmpty: [])) {
     on<BodymaintaincePressed>(bodimaintainbuttonpressed);
-    on<EnableButtonPressed>(enablebuttonpressed);
-    on<ServiceAddingButtonPressed>(serviceaddingbuttonpressed);
+    on<BodyEnableButtonPressed>(bodyenablebuttonpressed);
+    on<BodyServiceAddingButtonPressed>(serviceaddingbuttonpressed);
   }
   bodimaintainbuttonpressed(
       BodymaintaincePressed event, Emitter<ServiceState> emit) {
@@ -20,17 +20,18 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
         serviceNameList: state.serviceNameList, newmpty: state.newmpty));
   }
 
-  enablebuttonpressed(EnableButtonPressed event, Emitter<ServiceState> emit) {
+  bodyenablebuttonpressed(
+      BodyEnableButtonPressed event, Emitter<ServiceState> emit) {
     List<String> servicestoring = [...state.newmpty];
     if (servicestoring.contains(event.serviceName)) {
       print('nadakoolaa');
       servicestoring.remove(event.serviceName);
-      emit(Serviceremove(
+      emit(BodyServiceremove(
           newmpty: servicestoring, serviceNameList: state.serviceNameList));
     } else {
       servicestoring.add(event.serviceName);
       emit(
-        EnableBUttonValueAdded(
+        BodyEnableBUttonValueAdded(
           newmpty: servicestoring,
           serviceNameList: state.serviceNameList,
         ),
@@ -39,7 +40,7 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
   }
 
   serviceaddingbuttonpressed(
-      ServiceAddingButtonPressed event, Emitter<ServiceState> emit) {
+      BodyServiceAddingButtonPressed event, Emitter<ServiceState> emit) {
     List<String> cardTexts = [];
     if (cardTexts.contains(event.newservicename)) {
       print('value already exist');

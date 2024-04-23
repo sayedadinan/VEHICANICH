@@ -6,7 +6,11 @@ import 'package:vehicanich_shop/blocs/onboarding_bloc/onboarding_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/closingtime_blocs/bloc/closingtime_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/image_blocs/image_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
-import 'package:vehicanich_shop/blocs/registration_blocs/service_bloc/bloc/service_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/registration_button_bloc/bloc/registration_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/services/body_service/service_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/services/emergency_bloc/bloc/emergency_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/services/engine_bloc/bloc/engine_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/services/interior_service/bloc/interior_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/startingtime_bloc.dart/bloc/time_bloc.dart';
 import 'package:vehicanich_shop/firebase_options.dart';
 import 'package:vehicanich_shop/screens/onboarding_screen/onboarding_screen.dart';
@@ -24,7 +28,11 @@ void main(List<String> args) async {
     BlocProvider(create: (context) => StartingTimeBloc()),
     BlocProvider(create: (context) => ClosingtimeBloc()),
     BlocProvider(create: (context) => ImageBloc()),
-    BlocProvider(create: (context) => ServiceBloc()),
+    BlocProvider(create: (context) => BodyBloc()),
+    BlocProvider(create: (context) => InteriorBloc()),
+    BlocProvider(create: (context) => EngineBloc()),
+    BlocProvider(create: (context) => EmergencyBloc()),
+    BlocProvider(create: (context) => RegistrationBloc()),
   ], child: const MyApp()));
 }
 

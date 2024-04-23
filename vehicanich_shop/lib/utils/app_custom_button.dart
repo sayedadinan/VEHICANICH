@@ -7,7 +7,8 @@ class CustomButton extends StatelessWidget {
   final String text;
   final double fontSize;
   final Color buttontextcolor;
-  CustomButton({
+
+  const CustomButton({
     Key? key,
     required this.color,
     required this.function,
@@ -18,22 +19,28 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: Mymediaquery().mediaquerywidth(0.45, context),
-      height: Mymediaquery().mediaqueryheight(0.07, context),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(10.0),
-        onTap: function,
-        child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: buttontextcolor,
-              fontSize: fontSize,
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: function,
+          borderRadius: BorderRadius.circular(10.0),
+          child: Container(
+            width: double.infinity,
+            height: Mymediaquery().mediaqueryheight(0.07, context),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: buttontextcolor,
+                  fontSize: fontSize,
+                ),
+              ),
             ),
           ),
         ),

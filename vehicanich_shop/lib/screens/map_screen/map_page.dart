@@ -46,8 +46,7 @@ class MapScreen extends StatelessWidget {
                           .read<LocationBLoc>()
                           .add(ShopLocationPicked(position: state.picker));
                       Navigator.of(context).pushReplacement(
-                          FadeTransitionPageRoute(
-                              child: const RegisterScreen()));
+                          FadeTransitionPageRoute(child: RegisterScreen()));
                     },
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 300),
@@ -65,7 +64,7 @@ class MapScreen extends StatelessWidget {
                         horizontal: 16.0,
                         vertical: 8.0,
                       ),
-                      child:const Center(
+                      child: const Center(
                         child: Text('Drop here'),
                       ),
                     ),

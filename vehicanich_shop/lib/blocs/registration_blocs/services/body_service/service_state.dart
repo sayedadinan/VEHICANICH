@@ -18,18 +18,11 @@ class NavigatetoBodyservice extends ServiceState {
       {required super.serviceNameList, required super.newmpty});
 }
 
-class EnableBUttonValueAdded extends ServiceState {
-  EnableBUttonValueAdded(
+class BodyEnableBUttonValueAdded extends ServiceState {
+  BodyEnableBUttonValueAdded(
       {required super.serviceNameList, required super.newmpty});
 }
 
-class Serviceremove extends ServiceState {
-  Serviceremove({required super.newmpty, required super.serviceNameList});
+class BodyServiceremove extends ServiceState {
+  BodyServiceremove({required super.newmpty, required super.serviceNameList});
 }
-// class ServiceAddingButton extends ServiceState {
-//   final List<String> newservicenameList;
-//   ServiceAddingButton({
-//     required super.serviceNameList,
-//     required this.newservicenameList,
-//   });
-

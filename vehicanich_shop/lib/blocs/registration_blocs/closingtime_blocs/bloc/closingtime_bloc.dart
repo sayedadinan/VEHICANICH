@@ -6,7 +6,7 @@ part 'closingtime_event.dart';
 part 'closingtime_state.dart';
 
 class ClosingtimeBloc extends Bloc<ClosingtimeEvent, ClosingtimeState> {
-  ClosingtimeBloc() : super(ClosingtimeInitial()) {
+  ClosingtimeBloc() : super(ClosingtimeInitial(closingTime: '')) {
     on<ClosingTimePicked>(closingtimepicked);
   }
   closingtimepicked(ClosingTimePicked event, Emitter<ClosingtimeState> emit) {

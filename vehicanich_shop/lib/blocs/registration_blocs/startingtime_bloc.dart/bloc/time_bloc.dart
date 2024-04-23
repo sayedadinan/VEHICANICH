@@ -5,7 +5,7 @@ part 'time_event.dart';
 part 'time_state.dart';
 
 class StartingTimeBloc extends Bloc<TimeEvent, TimeState> {
-  StartingTimeBloc() : super(TimeInitial()) {
+  StartingTimeBloc() : super(TimeInitial(startingTime: '')) {
     on<StartingTimePicked>(timecontainerclicked);
   }
   timecontainerclicked(StartingTimePicked event, Emitter<TimeState> emit) {

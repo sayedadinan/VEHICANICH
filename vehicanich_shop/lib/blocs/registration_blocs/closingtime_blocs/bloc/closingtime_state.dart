@@ -1,11 +1,15 @@
 part of 'closingtime_bloc.dart';
 
-sealed class ClosingtimeState {}
-
-final class ClosingtimeInitial extends ClosingtimeState {}
-
-class ClosingTimeSelected extends ClosingtimeState {
+sealed class ClosingtimeState {
   final String closingTime;
 
-  ClosingTimeSelected({required this.closingTime});
+  ClosingtimeState({required this.closingTime});
+}
+
+final class ClosingtimeInitial extends ClosingtimeState {
+  ClosingtimeInitial({required super.closingTime});
+}
+
+class ClosingTimeSelected extends ClosingtimeState {
+  ClosingTimeSelected({required super.closingTime});
 }

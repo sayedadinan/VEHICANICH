@@ -21,6 +21,7 @@ class LicenceImagecontainer extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
+                color: Appallcolor().textcolor,
                 border: Border.all(
                   color: Appallcolor().textcolor,
                   width: 3,
@@ -46,34 +47,37 @@ class LicenceImagecontainer extends StatelessWidget {
                       print('licence started');
                     },
                     child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Appallcolor().textcolor,
-                            width: 2,
-                          ),
+                      decoration: BoxDecoration(
+                        color: Appallcolor().textcolor,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: Appallcolor().textcolor,
+                          width: 2,
                         ),
-                        width: Mymediaquery().mediaquerywidth(0.20, context),
-                        height: Mymediaquery().mediaqueryheight(0.12, context),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 29,
-                            ),
-                            CustomText(
-                              width: FontWeight.w300,
-                              color: Appallcolor().textcolor,
-                              fontSize: 14,
-                              text:
-                                  'Please upload your licence photo for validation Thank you',
-                            ),
-                            CustomText(
-                              width: FontWeight.w300,
-                              color: Appallcolor().textcolor,
-                              fontSize: 14,
-                              text: '(tap here)',
-                            ),
-                          ],
-                        )),
+                      ),
+                      width: Mymediaquery().mediaquerywidth(0.20, context),
+                      height: Mymediaquery().mediaqueryheight(0.12, context),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 29,
+                          ),
+                          CustomText(
+                            width: FontWeight.w400,
+                            color: Appallcolor().colorblack,
+                            fontSize: 14,
+                            text:
+                                'Please upload your licence photo for validation Thank you',
+                          ),
+                          CustomText(
+                            width: FontWeight.w400,
+                            color: Appallcolor().textcolor,
+                            fontSize: 14,
+                            text: '(tap here)',
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   // const LicenceImagecontainer(),

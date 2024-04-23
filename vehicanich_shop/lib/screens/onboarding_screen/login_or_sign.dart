@@ -21,10 +21,8 @@ class LoginOrsign extends StatelessWidget {
                 .push(FadeTransitionPageRoute(child: const LoginScreen()));
           }
           if (state is Navigatetosignpage) {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const RegisterScreen()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => RegisterScreen()));
           }
         },
         child: Scaffold(

@@ -1,11 +1,15 @@
 part of 'time_bloc.dart';
 
-sealed class TimeState {}
-
-final class TimeInitial extends TimeState {}
-
-class StartingTimeSelected extends TimeState {
+sealed class TimeState {
   final String startingTime;
 
-  StartingTimeSelected({required this.startingTime});
+  TimeState({required this.startingTime});
+}
+
+final class TimeInitial extends TimeState {
+  TimeInitial({required super.startingTime});
+}
+
+class StartingTimeSelected extends TimeState {
+  StartingTimeSelected({required super.startingTime});
 }
