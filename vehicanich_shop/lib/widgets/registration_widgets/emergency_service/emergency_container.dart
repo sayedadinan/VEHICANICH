@@ -36,20 +36,20 @@ class EmergencyButton extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const SizedBox(
-                  width: 20,
+                SizedBox(
+                  width: Mymediaquery().mediaquerywidth(0.02, context),
                 ),
                 CustomText(
                     text: text,
-                    fontSize: 20,
+                    fontSize: Mymediaquery().mediaquerywidth(0.02, context),
                     color: Appallcolor().colorblack,
                     width: FontWeight.w500),
                 SizedBox(
-                  width: Mymediaquery().mediaquerywidth(0.14, context),
+                  width: Mymediaquery().mediaquerywidth(0.09, context),
                 ),
-                const Icon(
+                Icon(
                   Icons.arrow_right,
-                  size: 40,
+                  size: Mymediaquery().mediaquerywidth(0.04, context),
                 )
               ],
             ),

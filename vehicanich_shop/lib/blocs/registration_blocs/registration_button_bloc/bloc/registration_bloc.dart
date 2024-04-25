@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich_shop/screens/register_screen/registration_velidations.dart';
 part 'registration_event.dart';
 part 'registration_state.dart';

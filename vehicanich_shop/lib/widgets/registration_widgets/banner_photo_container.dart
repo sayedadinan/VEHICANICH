@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/image_blocs/image_bloc.dart';
@@ -19,18 +17,22 @@ class BannerImagecontainer extends StatelessWidget {
             onTap: () {
               context.read<ImageBloc>().add(BannerImagePicker());
             },
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Appallcolor().textcolor,
-                  width: 3,
+            child: Padding(
+              padding: EdgeInsets.only(
+                  left: Mymediaquery().mediaquerywidth(0.02, context)),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Appallcolor().textcolor,
+                    width: 3,
+                  ),
                 ),
-              ),
-              width: Mymediaquery().mediaquerywidth(0.40, context),
-              height: Mymediaquery().mediaqueryheight(0.12, context),
-              child: Image.file(
-                File(state.bannerimagepath),
-                fit: BoxFit.cover,
+                width: Mymediaquery().mediaquerywidth(0.40, context),
+                height: Mymediaquery().mediaqueryheight(0.12, context),
+                child: Image.memory(
+                  state.bannerimagepathunit!,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           )
@@ -41,12 +43,12 @@ class BannerImagecontainer extends StatelessWidget {
               print('started banner');
             },
             child: Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
+              padding: EdgeInsets.only(
+                  left: Mymediaquery().mediaquerywidth(0.02, context)),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
-                    // color: Appallcolor().buttonforgroundcolor,
                     width: 3,
                   ),
                   color: Appallcolor().textcolor,

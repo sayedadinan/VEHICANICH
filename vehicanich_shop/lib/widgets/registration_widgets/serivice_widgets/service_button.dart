@@ -25,7 +25,9 @@ class BodyServiceContainer extends StatelessWidget {
           context.read<BodyBloc>().add(BodymaintaincePressed());
         },
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: EdgeInsets.only(
+              left: Mymediaquery().mediaquerywidth(0.02, context),
+              right: Mymediaquery().mediaquerywidth(0.02, context)),
           child: Container(
             width: double.infinity,
             height: Mymediaquery().mediaqueryheight(0.07, context),
@@ -35,20 +37,20 @@ class BodyServiceContainer extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const SizedBox(
-                  width: 20,
+                SizedBox(
+                  width: Mymediaquery().mediaquerywidth(0.02, context),
                 ),
                 CustomText(
                     text: text,
-                    fontSize: 20,
+                    fontSize: Mymediaquery().mediaquerywidth(0.02, context),
                     color: Appallcolor().colorblack,
                     width: FontWeight.w500),
                 SizedBox(
-                  width: Mymediaquery().mediaquerywidth(0.20, context),
+                  width: Mymediaquery().mediaquerywidth(0.17, context),
                 ),
-                const Icon(
+                Icon(
                   Icons.arrow_right,
-                  size: 40,
+                  size: Mymediaquery().mediaquerywidth(0.04, context),
                 )
               ],
             ),

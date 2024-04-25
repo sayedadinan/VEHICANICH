@@ -4,12 +4,10 @@ part 'interior_state.dart';
 
 class InteriorBloc extends Bloc<InteriorEvent, InteriorState> {
   InteriorBloc()
-      : super(InteriorInitial(newmpty: [], serviceNameList: [
-          'interior detailing',
-          'Dashboard Refining',
-          'Headliner Repair',
-          'Upholstery Repair'
-        ])) {
+      : super(InteriorInitial(
+          newmpty: [],
+          serviceNamemap: {},
+        )) {
     on<InteriorEnableButtonPressed>(interiorenablebuttonpressed);
     on<InteriorServiceAddingButtonPressed>(interiorserviceaddingbuttonpressed);
   }
@@ -20,13 +18,13 @@ class InteriorBloc extends Bloc<InteriorEvent, InteriorState> {
       print('nadakoolaa in interior');
       servicestoring.remove(event.serviceName);
       emit(InteriorServiceremove(
-          newmpty: servicestoring, serviceNameList: state.serviceNameList));
+          newmpty: servicestoring, serviceNamemap: state.serviceNamemap));
     } else {
       servicestoring.add(event.serviceName);
       emit(
         InteriorEnableBUttonValueAdded(
           newmpty: servicestoring,
-          serviceNameList: state.serviceNameList,
+          serviceNamemap: state.serviceNamemap,
         ),
       );
     }
@@ -35,16 +33,16 @@ class InteriorBloc extends Bloc<InteriorEvent, InteriorState> {
   interiorserviceaddingbuttonpressed(
       InteriorServiceAddingButtonPressed event, Emitter<InteriorState> emit) {
     try {
-      List<String> cardTexts = [];
-      if (cardTexts.contains(event.newservicename)) {
+      Map<String, dynamic> cardTexts = {};
+      if (cardTexts.containsKey(event.newservicename)) {
         print('value already exists');
       } else {
         print('worked');
-        cardTexts.add(event.newservicename);
-        state.serviceNameList.addAll(cardTexts);
+        cardTexts.putIfAbsent(event.newservicename, () => event.rate);
+        state.serviceNamemap.addAll(cardTexts);
         emit(InteriorInitial(
           newmpty: state.newmpty,
-          serviceNameList: state.serviceNameList,
+          serviceNamemap: state.serviceNamemap,
         ));
       }
     } catch (error, stackTrace) {

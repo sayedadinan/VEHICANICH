@@ -4,12 +4,18 @@ sealed class InteriorEvent {}
 
 class InteriorEnableButtonPressed extends InteriorEvent {
   final String serviceName;
-
-  InteriorEnableButtonPressed({required this.serviceName});
+  final dynamic rate;
+  InteriorEnableButtonPressed({
+    required this.serviceName,
+    required this.rate,
+  });
 }
 
 class InteriorServiceAddingButtonPressed extends InteriorEvent {
   final String newservicename;
-
-  InteriorServiceAddingButtonPressed({required this.newservicename});
+  final dynamic rate;
+  InteriorServiceAddingButtonPressed({
+    required this.newservicename,
+    required this.rate,
+  });
 }

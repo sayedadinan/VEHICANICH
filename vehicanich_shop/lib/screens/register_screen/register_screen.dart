@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/image_blocs/image_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/registration_button_bloc/bloc/registration_bloc.dart';
 import 'package:vehicanich_shop/screens/map_screen/map_page.dart';
+import 'package:vehicanich_shop/services/image_changing.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
 import 'package:vehicanich_shop/utils/app_custom_button.dart';
 import 'package:vehicanich_shop/utils/app_loadingindicator.dart';
@@ -15,12 +17,10 @@ import 'package:vehicanich_shop/widgets/registration_widgets/error_widgets/banne
 import 'package:vehicanich_shop/widgets/registration_widgets/error_widgets/closing_time_error.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/error_widgets/licence_error.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/error_widgets/location_error.dart';
-import 'package:vehicanich_shop/widgets/registration_widgets/error_widgets/logophoto_error.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/error_widgets/service_error.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/error_widgets/starting_time_error.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/service_button.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/licence_imagecontainer.dart';
-import 'package:vehicanich_shop/widgets/registration_widgets/logo_image_container.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/mm_image_container.dart';
 import 'package:vehicanich_shop/utils/mediaquery.dart';
 import 'package:vehicanich_shop/utils/page_transition/page_fade_transition.dart';
@@ -71,6 +71,7 @@ class RegisterScreen extends StatelessWidget {
                   hinttext: 'Email',
                   validator: (value) => Validators().validateEmail(value),
                   controller: emailcontroller,
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
@@ -78,6 +79,7 @@ class RegisterScreen extends StatelessWidget {
                   hinttext: 'phone',
                   validator: (value) => Validators().validatePhoneNumber(value),
                   controller: phonecontroller,
+                  keyboardType: TextInputType.phone,
                 ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
@@ -85,6 +87,7 @@ class RegisterScreen extends StatelessWidget {
                   hinttext: 'Whatsapp Number',
                   validator: (value) => Validators().validatePhoneNumber(value),
                   controller: whatsappcontroller,
+                  keyboardType: TextInputType.phone,
                 ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
@@ -96,7 +99,8 @@ class RegisterScreen extends StatelessWidget {
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
                 Inputfield(
                     hinttext: 'consfirm password',
-                    validator: (value) => Validators().validatePassword(value),
+                    validator: (value) => Validators()
+                        .validatePasswordMatch(value!, passwordcontroller.text),
                     controller: confirmpassword),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
@@ -116,6 +120,7 @@ class RegisterScreen extends StatelessWidget {
                   validator: (value) => Validators().validateAddress(value),
                   controller: addresscontroller,
                   maxLines: 4,
+                  keyboardType: TextInputType.multiline,
                 ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
@@ -158,9 +163,6 @@ class RegisterScreen extends StatelessWidget {
                 const BannerErrorText(),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
-                const HintText(size: 0.04, text: 'logo photo'),
-                const LogoImagecontainer(),
-                const LogoErrorText(),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
                 const BodyServiceContainer(text: 'Add All services'),
@@ -174,6 +176,13 @@ class RegisterScreen extends StatelessWidget {
                     function: () {
                       context.read<RegistrationBloc>().add(
                           Registerbuttonpressed(context: context, signupKey));
+                      Imagechanging().licenceimagechanging(
+                          BlocProvider.of<ImageBloc>(context)
+                              .state
+                              .licenceimagepath,
+                          BlocProvider.of<ImageBloc>(context, listen: false)
+                              .state
+                              .licenceimagepathunit!);
                     },
                     buttontextcolor: Appallcolor().colorwhite,
                     text: 'Register',

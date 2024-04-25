@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/image_blocs/image_bloc.dart';
@@ -26,8 +24,8 @@ class MMImageContainer extends StatelessWidget {
             ),
             width: Mymediaquery().mediaquerywidth(0.20, context),
             height: Mymediaquery().mediaqueryheight(0.12, context),
-            child: Image.file(
-              File(state.mmimagepath),
+            child: Image.memory(
+              state.mmimagepathunit!,
               fit: BoxFit.cover,
             ),
           )

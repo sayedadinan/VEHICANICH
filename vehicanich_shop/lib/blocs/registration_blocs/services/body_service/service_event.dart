@@ -6,12 +6,20 @@ class BodymaintaincePressed extends ServiceEvent {}
 
 class BodyEnableButtonPressed extends ServiceEvent {
   final String serviceName;
-
-  BodyEnableButtonPressed({required this.serviceName});
+  final dynamic rate;
+  BodyEnableButtonPressed({required this.serviceName, required this.rate});
 }
 
 class BodyServiceAddingButtonPressed extends ServiceEvent {
   final String newservicename;
+  final dynamic serviceRate;
+  BodyServiceAddingButtonPressed(
+      {required this.newservicename, required this.serviceRate});
+}
 
-  BodyServiceAddingButtonPressed({required this.newservicename});
+class AddServiceWithRate extends ServiceEvent {
+  final String serviceName;
+  final int rate;
+
+  AddServiceWithRate({required this.serviceName, required this.rate});
 }

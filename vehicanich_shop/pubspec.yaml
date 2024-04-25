@@ -52,6 +52,7 @@ dependencies:
   gradient_coloured_buttons: ^0.1.0
   flutter_animated_button: ^2.0.3
   flutter_advanced_segment: ^3.0.2
+  firebase_storage: ^11.7.4
   
 dev_dependencies:
   flutter_test:

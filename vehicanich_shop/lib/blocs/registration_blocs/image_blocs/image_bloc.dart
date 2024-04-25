@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:bloc/bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -7,6 +9,9 @@ part 'image_state.dart';
 class ImageBloc extends Bloc<ImageEvent, ImageState> {
   ImageBloc()
       : super(ImageInitial(
+            licenceimagepathunit: null,
+            mmimagepathunit: null,
+            bannerimagepathunit: null,
             bannerimagepath: '',
             licenceimagepath: '',
             mmimagepath: '',
@@ -21,17 +26,19 @@ class ImageBloc extends Bloc<ImageEvent, ImageState> {
     try {
       final ImagePicker picker = ImagePicker();
       final licenseImage = await picker.pickImage(source: ImageSource.gallery);
-      if (licenseImage != null) {
-        print(licenseImage);
-        emit(
-          ImageInitial(
-            logoimagepath: state.logoimagepath,
-            bannerimagepath: state.bannerimagepath,
-            licenceimagepath: licenseImage.path,
-            mmimagepath: state.mmimagepath,
-          ),
-        );
-      }
+      Uint8List licenseImageData = await licenseImage!.readAsBytes();
+      print(licenseImage);
+      emit(
+        ImageInitial(
+          licenceimagepathunit: licenseImageData,
+          bannerimagepathunit: state.bannerimagepathunit,
+          mmimagepathunit: state.mmimagepathunit,
+          logoimagepath: state.logoimagepath,
+          bannerimagepath: state.bannerimagepath,
+          licenceimagepath: licenseImage.path,
+          mmimagepath: state.mmimagepath,
+        ),
+      );
     } catch (e) {
       print('licence image fetching error');
     }
@@ -41,17 +48,19 @@ class ImageBloc extends Bloc<ImageEvent, ImageState> {
     try {
       final ImagePicker picker = ImagePicker();
       final mmimagepath = await picker.pickImage(source: ImageSource.gallery);
-      if (mmimagepath != null) {
-        print(mmimagepath);
-        emit(
-          ImageInitial(
-            logoimagepath: state.logoimagepath,
-            bannerimagepath: state.bannerimagepath,
-            licenceimagepath: state.licenceimagepath,
-            mmimagepath: mmimagepath.path,
-          ),
-        );
-      }
+      Uint8List mmImageData = await mmimagepath!.readAsBytes();
+      print(mmimagepath);
+      emit(
+        ImageInitial(
+          licenceimagepathunit: state.licenceimagepathunit,
+          bannerimagepathunit: state.bannerimagepathunit,
+          mmimagepathunit: mmImageData,
+          logoimagepath: state.logoimagepath,
+          bannerimagepath: state.bannerimagepath,
+          licenceimagepath: state.licenceimagepath,
+          mmimagepath: mmimagepath.path,
+        ),
+      );
     } catch (e) {
       print('mm image fetching error');
     }
@@ -61,17 +70,19 @@ class ImageBloc extends Bloc<ImageEvent, ImageState> {
     try {
       final ImagePicker picker = ImagePicker();
       final bannerpath = await picker.pickImage(source: ImageSource.gallery);
-      if (bannerpath != null) {
-        print(bannerpath);
-        emit(
-          ImageInitial(
-            logoimagepath: state.logoimagepath,
-            bannerimagepath: bannerpath.path,
-            licenceimagepath: state.licenceimagepath,
-            mmimagepath: state.mmimagepath,
-          ),
-        );
-      }
+      Uint8List bannerImageData = await bannerpath!.readAsBytes();
+      print(bannerpath);
+      emit(
+        ImageInitial(
+          licenceimagepathunit: state.licenceimagepathunit,
+          bannerimagepathunit: bannerImageData,
+          mmimagepathunit: state.mmimagepathunit,
+          logoimagepath: state.logoimagepath,
+          bannerimagepath: bannerpath.path,
+          licenceimagepath: state.licenceimagepath,
+          mmimagepath: state.mmimagepath,
+        ),
+      );
     } catch (e) {
       print('bannerimage fetching error');
     }
@@ -85,6 +96,9 @@ class ImageBloc extends Bloc<ImageEvent, ImageState> {
         print(logopath);
         emit(
           ImageInitial(
+            licenceimagepathunit: state.licenceimagepathunit,
+            bannerimagepathunit: state.bannerimagepathunit,
+            mmimagepathunit: state.mmimagepathunit,
             logoimagepath: logopath.path,
             bannerimagepath: state.bannerimagepath,
             licenceimagepath: state.licenceimagepath,

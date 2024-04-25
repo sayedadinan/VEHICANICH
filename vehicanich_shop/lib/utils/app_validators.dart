@@ -55,4 +55,13 @@ class Validators {
     }
     return null;
   }
+
+  String? validateNumericInput(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Input cannot be empty';
+    } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+      return 'Please enter only numeric values';
+    }
+    return null;
+  }
 }

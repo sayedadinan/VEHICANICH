@@ -19,18 +19,22 @@ class LogoImagecontainer extends StatelessWidget {
             onTap: () {
               context.read<ImageBloc>().add(LogoImagePicker());
             },
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Appallcolor().textcolor,
-                  width: 3,
+            child: Padding(
+              padding: EdgeInsets.only(
+                  left: Mymediaquery().mediaquerywidth(0.02, context)),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Appallcolor().textcolor,
+                    width: 3,
+                  ),
                 ),
-              ),
-              width: Mymediaquery().mediaquerywidth(0.40, context),
-              height: Mymediaquery().mediaqueryheight(0.12, context),
-              child: Image.file(
-                File(state.logoimagepath),
-                fit: BoxFit.cover,
+                width: Mymediaquery().mediaquerywidth(0.40, context),
+                height: Mymediaquery().mediaqueryheight(0.12, context),
+                child: Image.file(
+                  File(state.logoimagepath),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           )
@@ -41,7 +45,8 @@ class LogoImagecontainer extends StatelessWidget {
               print('started banner');
             },
             child: Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
+              padding: EdgeInsets.only(
+                  left: Mymediaquery().mediaquerywidth(0.02, context)),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),

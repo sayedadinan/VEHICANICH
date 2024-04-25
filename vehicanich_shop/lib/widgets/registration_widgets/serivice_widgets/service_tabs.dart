@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
-import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/body_service.dart';
-import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/engine_service.dart';
-import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/interior_service.dart';
+import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/engine_service_widgets/engine_service.dart';
+import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/interior_service_widget/interior_service.dart';
+import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/service_body_widget/body_service.dart';
 
 class ServiceTabPage extends StatelessWidget {
   const ServiceTabPage({Key? key}) : super(key: key);
@@ -19,15 +19,6 @@ class ServiceTabPage extends StatelessWidget {
             'Add your services',
             style: TextStyle(color: Colors.white),
           ),
-          // bottom: PreferredSize(
-          //   preferredSize:
-          //       Size.fromHeight(kToolbarHeight), // Specify preferred size
-          //   child: Column(
-          //     children: [
-          //       const SizedBox(height: 8), // Example: Adding space
-          //     ],
-          //   ),
-          // ),
           bottom: TabBar(
             tabs: const [
               Tab(text: 'Body services'),
@@ -45,9 +36,10 @@ class ServiceTabPage extends StatelessWidget {
           ),
         ),
         body: TabBarView(
+          physics: BouncingScrollPhysics(),
           children: [
             BodyServicePage(),
-            InteriorServiceScreen(),
+            InteriorServicePage(),
             EngineServicePage()
           ],
         ),
