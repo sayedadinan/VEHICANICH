@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vehicanich_shop/blocs/registration_blocs/image_blocs/image_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/registration_button_bloc/bloc/registration_bloc.dart';
 import 'package:vehicanich_shop/screens/map_screen/map_page.dart';
-import 'package:vehicanich_shop/services/image_changing.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
 import 'package:vehicanich_shop/utils/app_custom_button.dart';
 import 'package:vehicanich_shop/utils/app_loadingindicator.dart';
@@ -42,6 +40,9 @@ class RegisterScreen extends StatelessWidget {
               Navigator.of(context)
                   .push(FadeTransitionPageRoute(child: const MapScreen()));
             }
+            if (state is Registrationsuccess) {
+              print('datas added');
+            }
           },
           builder: (context, state) {
             if (state is LocationFetchingLoading) {
@@ -76,6 +77,7 @@ class RegisterScreen extends StatelessWidget {
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
                 Inputfield(
+                  maxlength: 10,
                   hinttext: 'phone',
                   validator: (value) => Validators().validatePhoneNumber(value),
                   controller: phonecontroller,
@@ -84,6 +86,7 @@ class RegisterScreen extends StatelessWidget {
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
                 Inputfield(
+                  maxlength: 10,
                   hinttext: 'Whatsapp Number',
                   validator: (value) => Validators().validatePhoneNumber(value),
                   controller: whatsappcontroller,
@@ -115,13 +118,6 @@ class RegisterScreen extends StatelessWidget {
                 const LocationErrorText(),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
-                Inputfield(
-                  hinttext: 'Address',
-                  validator: (value) => Validators().validateAddress(value),
-                  controller: addresscontroller,
-                  maxLines: 4,
-                  keyboardType: TextInputType.multiline,
-                ),
                 SizedBox(
                     height: Mymediaquery().mediaqueryheight(0.02, context)),
                 Inputfield(
@@ -176,13 +172,6 @@ class RegisterScreen extends StatelessWidget {
                     function: () {
                       context.read<RegistrationBloc>().add(
                           Registerbuttonpressed(context: context, signupKey));
-                      Imagechanging().licenceimagechanging(
-                          BlocProvider.of<ImageBloc>(context)
-                              .state
-                              .licenceimagepath,
-                          BlocProvider.of<ImageBloc>(context, listen: false)
-                              .state
-                              .licenceimagepathunit!);
                     },
                     buttontextcolor: Appallcolor().colorwhite,
                     text: 'Register',

@@ -1,17 +1,20 @@
-import 'dart:typed_data';
-
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vehicanich_shop/blocs/registration_blocs/image_blocs/image_bloc.dart';
 
 class Imagechanging {
-  licenceimagechanging(String image, Uint8List imagebyte) async {
+  licenceimagechanging(BuildContext context) async {
     try {
       firebase_storage.Reference reference = firebase_storage
           .FirebaseStorage.instance
           .ref()
           .child('licence_image')
-          .child(image);
+          .child(BlocProvider.of<ImageBloc>(context).state.licenceimagepath);
       final meta = firebase_storage.SettableMetadata(contentType: "image/jpeg");
-      await reference.putData(imagebyte, meta);
+      await reference.putData(
+          BlocProvider.of<ImageBloc>(context).state.licenceimagepathunit!,
+          meta);
       String url = await reference.getDownloadURL();
       return url;
     } catch (e) {
@@ -19,15 +22,16 @@ class Imagechanging {
     }
   }
 
-  mmimagechanging(String image, Uint8List imagebyte) async {
+  mmimagechanging(BuildContext context) async {
     try {
       firebase_storage.Reference reference = firebase_storage
           .FirebaseStorage.instance
           .ref()
           .child('mm_image')
-          .child(image);
+          .child(BlocProvider.of<ImageBloc>(context).state.mmimagepath);
       final meta = firebase_storage.SettableMetadata(contentType: "image/jpeg");
-      await reference.putData(imagebyte, meta);
+      await reference.putData(
+          BlocProvider.of<ImageBloc>(context).state.mmimagepathunit!, meta);
       String url = await reference.getDownloadURL();
       return url;
     } catch (e) {
@@ -35,15 +39,16 @@ class Imagechanging {
     }
   }
 
-  bannerimagechanging(String image, Uint8List imagebyte) async {
+  bannerimagechanging(BuildContext context) async {
     try {
       firebase_storage.Reference reference = firebase_storage
           .FirebaseStorage.instance
           .ref()
           .child('banner_image')
-          .child(image);
+          .child(BlocProvider.of<ImageBloc>(context).state.bannerimagepath);
       final meta = firebase_storage.SettableMetadata(contentType: "image/jpeg");
-      await reference.putData(imagebyte, meta);
+      await reference.putData(
+          BlocProvider.of<ImageBloc>(context).state.bannerimagepathunit!, meta);
       String url = await reference.getDownloadURL();
       return url;
     } catch (e) {

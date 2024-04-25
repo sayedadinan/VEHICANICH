@@ -53,6 +53,7 @@ dependencies:
   flutter_animated_button: ^2.0.3
   flutter_advanced_segment: ^3.0.2
   firebase_storage: ^11.7.4
+  cloud_firestore: ^4.17.2
   
 dev_dependencies:
   flutter_test:

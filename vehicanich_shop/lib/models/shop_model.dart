@@ -1,57 +1,58 @@
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ShopModel {
-  final String id;
   final String name;
   final String email;
-  final int whatsapp;
+  final String whatsapp;
   final String password;
   final String shopname;
-  final LatLng shoplocation;
-  final String address;
+  final GeoPoint shoplocation;
   final String description;
-  final DateTime startingtime;
-  final DateTime closingtime;
+  final String startingtime;
+  final String closingtime;
   final String licenceimagepath;
   final String mmimagepath;
   final String bannerimagepath;
-
+  final bool isApproved;
+  final Map<String, dynamic> bodyservicemap;
+  final Map<String, dynamic> interiorservicemap;
+  final Map<String, dynamic> enginservicemap;
   ShopModel({
-    required this.id,
     required this.name,
     required this.email,
     required this.whatsapp,
     required this.password,
     required this.shopname,
     required this.shoplocation,
-    required this.address,
     required this.description,
     required this.startingtime,
     required this.closingtime,
     required this.licenceimagepath,
     required this.mmimagepath,
     required this.bannerimagepath,
+    required this.isApproved,
+    required this.bodyservicemap,
+    required this.interiorservicemap,
+    required this.enginservicemap,
   });
-
   Map<String, dynamic> toJson() {
     return {
-      "id": id,
       "name": name,
       "email": email,
       "whatsapp": whatsapp,
       "password": password,
       "shopname": shopname,
-      "location": {
-        "latitude": shoplocation.latitude,
-        "longitude": shoplocation.longitude
-      },
-      "address": address,
+      "location": shoplocation,
       "description": description,
-      "startingtime": startingtime.toIso8601String(),
-      "closingtime": closingtime.toIso8601String(),
+      "startingtime": startingtime,
+      "closingtime": closingtime,
       "licenceimagepath": licenceimagepath,
       "mmimagepath": mmimagepath,
       "bannerimagepath": bannerimagepath,
+      "isApproved": isApproved,
+      "bodyservicemap": bodyservicemap,
+      "interiorservicemap": interiorservicemap,
+      "enginservicemap": enginservicemap,
     };
   }
 }

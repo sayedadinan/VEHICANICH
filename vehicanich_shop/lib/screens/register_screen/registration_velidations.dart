@@ -31,10 +31,6 @@ bannerphotovalidation(context) {
   return BlocProvider.of<ImageBloc>(context).state.bannerimagepath.isNotEmpty;
 }
 
-logoimagevalidation(context) {
-  return BlocProvider.of<ImageBloc>(context).state.logoimagepath.isNotEmpty;
-}
-
 bodyvalidation(context) {
   return BlocProvider.of<BodyBloc>(context).state.newmpty.isNotEmpty;
 }
