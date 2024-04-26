@@ -14,7 +14,7 @@ class EmergencyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100), // Adjust the height as needed
+        preferredSize: const Size.fromHeight(100), // Adjust the height as needed
         child: AppBar(
           centerTitle: true,
           title: Padding(
@@ -125,7 +125,7 @@ void _showAddMoreBottomSheet(BuildContext context) {
                 Navigator.pop(context); // Close bottom sheet
                 // } else {}
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         ),

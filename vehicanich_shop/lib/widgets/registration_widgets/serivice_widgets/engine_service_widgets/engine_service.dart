@@ -10,6 +10,8 @@ import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/se
 import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/service_description_and_texts.dart';
 
 class EngineServicePage extends StatefulWidget {
+  const EngineServicePage({super.key});
+
   @override
   BodyServicePageState createState() => BodyServicePageState();
 }

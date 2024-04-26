@@ -8,7 +8,7 @@ import 'package:vehicanich_shop/utils/mediaquery.dart';
 class CustomEnginecard extends StatelessWidget {
   final String texts;
   final dynamic rate;
-  CustomEnginecard({super.key, required this.texts, required this.rate});
+  const CustomEnginecard({super.key, required this.texts, required this.rate});
 
   @override
   Widget build(BuildContext context) {

@@ -17,7 +17,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         listener: (context, state) {
           if (state is NavigateToOtpPage) {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => OtpverificationPage()));
+                MaterialPageRoute(builder: (context) => const OtpverificationPage()));
           }
         },
         child: Scaffold(

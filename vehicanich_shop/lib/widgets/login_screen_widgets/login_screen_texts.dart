@@ -23,7 +23,7 @@ class CustomQuestion extends StatelessWidget {
         GestureDetector(
           onTap: () {
             Navigator.of(context).pushReplacement(
-                FadeTransitionPageRoute(child: RegisterScreen()));
+                FadeTransitionPageRoute(child: const RegisterScreen()));
           },
           child: Text(
             ' Register Now',

@@ -5,7 +5,7 @@ import 'package:vehicanich_shop/blocs/registration_blocs/startingtime_bloc.dart/
 import 'package:vehicanich_shop/utils/app_colors.dart';
 
 class StartingtimeErrorText extends StatelessWidget {
-  const StartingtimeErrorText({Key? key}) : super(key: key);
+  const StartingtimeErrorText({super.key});
 
   @override
   Widget build(BuildContext context) {

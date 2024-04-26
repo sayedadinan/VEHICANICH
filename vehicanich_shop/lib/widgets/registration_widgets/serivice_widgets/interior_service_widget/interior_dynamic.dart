@@ -8,7 +8,7 @@ import 'package:vehicanich_shop/utils/mediaquery.dart';
 class CustomInteriorcard extends StatelessWidget {
   final String texts;
   final dynamic rate;
-  CustomInteriorcard({super.key, required this.texts, required this.rate});
+  const CustomInteriorcard({super.key, required this.texts, required this.rate});
 
   @override
   Widget build(BuildContext context) {

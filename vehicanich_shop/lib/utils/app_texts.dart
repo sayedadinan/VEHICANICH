@@ -6,12 +6,12 @@ class CustomText extends StatelessWidget {
   final Color color;
   final FontWeight width;
   const CustomText({
-    Key? key,
+    super.key,
     required this.text,
     required this.fontSize,
     required this.color,
     required this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

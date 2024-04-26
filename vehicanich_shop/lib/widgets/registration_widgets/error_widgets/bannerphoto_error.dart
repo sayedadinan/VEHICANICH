@@ -5,7 +5,7 @@ import 'package:vehicanich_shop/blocs/registration_blocs/registration_button_blo
 import 'package:vehicanich_shop/utils/app_colors.dart';
 
 class BannerErrorText extends StatelessWidget {
-  const BannerErrorText({Key? key}) : super(key: key);
+  const BannerErrorText({super.key});
 
   @override
   Widget build(BuildContext context) {

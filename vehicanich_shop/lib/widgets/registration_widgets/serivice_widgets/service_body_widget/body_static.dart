@@ -9,7 +9,7 @@ import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/se
 class Bodydentreparingcard extends StatelessWidget {
   final String texts;
   final TextEditingController controller;
-  Bodydentreparingcard(
+  const Bodydentreparingcard(
       {super.key, required this.texts, required this.controller});
 
   @override

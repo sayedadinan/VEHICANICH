@@ -8,7 +8,7 @@ import 'package:vehicanich_shop/utils/app_texts.dart';
 import 'package:vehicanich_shop/utils/mediaquery.dart';
 
 class LogoImagecontainer extends StatelessWidget {
-  const LogoImagecontainer({Key? key}) : super(key: key);
+  const LogoImagecontainer({super.key});
 
   @override
   Widget build(BuildContext context) {

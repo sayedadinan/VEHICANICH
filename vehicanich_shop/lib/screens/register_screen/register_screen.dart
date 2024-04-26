@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/registration_button_bloc/bloc/registration_bloc.dart';
-import 'package:vehicanich_shop/screens/map_screen/map_page.dart';
+import 'package:vehicanich_shop/screens/register_screen/otp_waiting_screen.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
 import 'package:vehicanich_shop/utils/app_custom_button.dart';
-import 'package:vehicanich_shop/utils/app_loadingindicator.dart';
 import 'package:vehicanich_shop/utils/app_textfields.dart';
 import 'package:vehicanich_shop/utils/app_validators.dart';
 import 'package:vehicanich_shop/utils/constant_variables/textediting_controller.dart';
@@ -21,7 +19,6 @@ import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/se
 import 'package:vehicanich_shop/widgets/registration_widgets/licence_imagecontainer.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/mm_image_container.dart';
 import 'package:vehicanich_shop/utils/mediaquery.dart';
-import 'package:vehicanich_shop/utils/page_transition/page_fade_transition.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/closing_time_container.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/location_container.dart';
 import 'package:vehicanich_shop/widgets/registration_widgets/starting_time_container.dart';
@@ -34,20 +31,14 @@ class RegisterScreen extends StatelessWidget {
     final GlobalKey<FormState> signupKey = GlobalKey<FormState>();
     return Scaffold(
         backgroundColor: Appallcolor().appbackgroundcolor,
-        body: BlocConsumer<LocationBLoc, LocationState>(
+        body: BlocConsumer<RegistrationBloc, RegistrationState>(
           listener: (context, state) {
-            if (state is CurrentLocationFetched) {
-              Navigator.of(context)
-                  .push(FadeTransitionPageRoute(child: const MapScreen()));
-            }
             if (state is Registrationsuccess) {
-              print('datas added');
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const OtpWaitingScreen()));
             }
           },
           builder: (context, state) {
-            if (state is LocationFetchingLoading) {
-              return Center(child: loader);
-            }
             return SingleChildScrollView(
                 child: Form(
               key: signupKey,

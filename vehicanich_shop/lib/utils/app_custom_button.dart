@@ -9,13 +9,13 @@ class CustomButton extends StatelessWidget {
   final Color buttontextcolor;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.color,
     required this.function,
     required this.text,
     required this.fontSize,
     required this.buttontextcolor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

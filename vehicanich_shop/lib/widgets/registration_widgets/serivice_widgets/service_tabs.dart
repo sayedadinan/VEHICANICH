@@ -5,7 +5,7 @@ import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/in
 import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/service_body_widget/body_service.dart';
 
 class ServiceTabPage extends StatelessWidget {
-  const ServiceTabPage({Key? key}) : super(key: key);
+  const ServiceTabPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class ServiceTabPage extends StatelessWidget {
             unselectedLabelColor: Appallcolor().colorwhite,
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           physics: BouncingScrollPhysics(),
           children: [
             BodyServicePage(),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vehicanich_shop/blocs/registration_blocs/location_bloc/location_bloc.dart';
+import 'package:vehicanich_shop/screens/map_screen/map_page.dart';
 import 'package:vehicanich_shop/utils/app_colors.dart';
 import 'package:vehicanich_shop/utils/mediaquery.dart';
+import 'package:vehicanich_shop/utils/page_transition/page_fade_transition.dart';
 
 class LocationTextContainer extends StatelessWidget {
   const LocationTextContainer({super.key});
@@ -11,9 +13,15 @@ class LocationTextContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LocationBLoc, LocationState>(
       listener: (context, state) {
-        // TODO: implement listener
+        if (state is CurrentLocationFetched) {
+          Navigator.of(context)
+              .push(FadeTransitionPageRoute(child: const MapScreen()));
+        }
       },
       builder: (context, state) {
+        if (state is LocationFetchingLoading) {
+          return const Center(child: CircularProgressIndicator());
+        }
         return GestureDetector(
           onTap: () {
             context.read<LocationBLoc>().add(LocationButtonPressed());

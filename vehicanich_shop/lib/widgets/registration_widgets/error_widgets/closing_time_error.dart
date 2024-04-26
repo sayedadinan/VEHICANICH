@@ -5,7 +5,7 @@ import 'package:vehicanich_shop/blocs/registration_blocs/registration_button_blo
 import 'package:vehicanich_shop/utils/app_colors.dart';
 
 class ClosingtimeErrorText extends StatelessWidget {
-  const ClosingtimeErrorText({Key? key}) : super(key: key);
+  const ClosingtimeErrorText({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -8,16 +8,16 @@ import 'package:vehicanich_shop/utils/mediaquery.dart';
 import 'package:vehicanich_shop/utils/page_transition/page_fade_transition.dart';
 
 class MapScreen extends StatelessWidget {
-  const MapScreen({Key? key}) : super(key: key);
+  const MapScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LocationBLoc, LocationState>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        if (state is CurrentLocationFetched) {
-          return Scaffold(
-            body: Stack(
+    return Scaffold(
+      body: BlocBuilder<LocationBLoc, LocationState>(
+        builder: (context, state) {
+          if (state is CurrentLocationFetched) {
+            print('this worked');
+            return Stack(
               children: [
                 GoogleMap(
                   onTap: (argument) {
@@ -31,10 +31,9 @@ class MapScreen extends StatelessWidget {
                   ),
                   markers: {
                     Marker(
-                      markerId: const MarkerId("marker location"),
-                      icon: BitmapDescriptor.defaultMarker,
-                      position: state.picker,
-                    )
+                        markerId: const MarkerId("marker location"),
+                        icon: BitmapDescriptor.defaultMarker,
+                        position: state.picker)
                   },
                 ),
                 Positioned(
@@ -46,7 +45,7 @@ class MapScreen extends StatelessWidget {
                           .read<LocationBLoc>()
                           .add(ShopLocationPicked(position: state.picker));
                       Navigator.of(context).pushReplacement(
-                          FadeTransitionPageRoute(child: RegisterScreen()));
+                          FadeTransitionPageRoute(child: const RegisterScreen()));
                     },
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 300),
@@ -71,11 +70,11 @@ class MapScreen extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-          );
-        }
-        return const SizedBox();
-      },
+            );
+          }
+          return const SizedBox();
+        },
+      ),
     );
   }
 }

@@ -57,7 +57,7 @@ class LicenceImagecontainer extends StatelessWidget {
                       height: Mymediaquery().mediaqueryheight(0.12, context),
                       child: Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 29,
                           ),
                           CustomText(

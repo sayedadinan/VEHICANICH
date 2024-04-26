@@ -14,7 +14,7 @@ class Inputfield extends StatelessWidget {
   final int? maxlength;
   const Inputfield({
     this.controller,
-    Key? key,
+    super.key,
     this.label,
     required this.hinttext,
     this.keyboardType,
@@ -23,7 +23,7 @@ class Inputfield extends StatelessWidget {
     this.maxLines,
     this.onTap,
     this.maxlength,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

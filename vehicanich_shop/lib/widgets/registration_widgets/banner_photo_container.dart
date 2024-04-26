@@ -6,7 +6,7 @@ import 'package:vehicanich_shop/utils/app_texts.dart';
 import 'package:vehicanich_shop/utils/mediaquery.dart';
 
 class BannerImagecontainer extends StatelessWidget {
-  const BannerImagecontainer({Key? key}) : super(key: key);
+  const BannerImagecontainer({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -22,7 +22,7 @@ class LoginOrsign extends StatelessWidget {
           }
           if (state is Navigatetosignpage) {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => RegisterScreen()));
+                MaterialPageRoute(builder: (context) => const RegisterScreen()));
           }
         },
         child: Scaffold(

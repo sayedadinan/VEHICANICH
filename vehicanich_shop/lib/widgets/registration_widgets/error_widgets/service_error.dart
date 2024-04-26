@@ -7,7 +7,7 @@ import 'package:vehicanich_shop/blocs/registration_blocs/services/interior_servi
 import 'package:vehicanich_shop/utils/app_colors.dart';
 
 class ServiceErrorText extends StatelessWidget {
-  const ServiceErrorText({Key? key}) : super(key: key);
+  const ServiceErrorText({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -54,6 +54,7 @@ dependencies:
   flutter_advanced_segment: ^3.0.2
   firebase_storage: ^11.7.4
   cloud_firestore: ^4.17.2
+  firebase_auth: ^4.19.4
   
 dev_dependencies:
   flutter_test:

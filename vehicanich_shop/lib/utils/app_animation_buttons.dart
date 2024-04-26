@@ -43,13 +43,13 @@ class CustomAnimatedButton extends StatelessWidget {
   final TextStyle textStyle;
 
   const CustomAnimatedButton({
-    Key? key,
+    super.key,
     required this.width,
     required this.text,
     required this.selectedTextColor,
     required this.transitionType,
     required this.textStyle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

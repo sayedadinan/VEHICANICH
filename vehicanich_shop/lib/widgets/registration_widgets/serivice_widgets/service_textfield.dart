@@ -4,10 +4,10 @@ import 'package:vehicanich_shop/utils/mediaquery.dart';
 
 class CustomServiceTextField extends StatelessWidget {
   const CustomServiceTextField({
-    Key? key,
+    super.key,
     required this.enabled,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final bool enabled;
   final TextEditingController controller;
@@ -38,7 +38,7 @@ class CustomServiceTextField extends StatelessWidget {
           fillColor: enabled
               ? Appallcolor().colorwhite
               : Appallcolor().placeholderimagecolor,
-          contentPadding: EdgeInsets.symmetric(horizontal: 5),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 5),
           enabled: enabled,
           disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Appallcolor().placeholderimagecolor),

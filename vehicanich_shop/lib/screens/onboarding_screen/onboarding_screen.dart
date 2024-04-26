@@ -26,7 +26,7 @@ class OnboardingScreen extends StatelessWidget {
           }
           if (state is NavigatetoLoginorSignPage) {
             Navigator.of(context)
-                .push(FadeTransitionPageRoute(child: LoginOrsign()));
+                .push(FadeTransitionPageRoute(child: const LoginOrsign()));
           }
         },
         child: Scaffold(

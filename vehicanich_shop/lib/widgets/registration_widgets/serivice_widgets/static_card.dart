@@ -152,7 +152,7 @@ import 'package:vehicanich_shop/widgets/registration_widgets/serivice_widgets/se
 
 class CustomEmergencyStaticCard extends StatefulWidget {
   final String texts;
-  CustomEmergencyStaticCard({super.key, required this.texts});
+  const CustomEmergencyStaticCard({super.key, required this.texts});
 
   @override
   State<CustomEmergencyStaticCard> createState() =>

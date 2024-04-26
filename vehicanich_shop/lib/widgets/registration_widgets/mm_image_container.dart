@@ -6,7 +6,7 @@ import 'package:vehicanich_shop/utils/app_texts.dart';
 import 'package:vehicanich_shop/utils/mediaquery.dart';
 
 class MMImageContainer extends StatelessWidget {
-  const MMImageContainer({Key? key}) : super(key: key);
+  const MMImageContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class MMImageContainer extends StatelessWidget {
               height: Mymediaquery().mediaqueryheight(0.12, context),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 29,
                   ),
                   CustomText(

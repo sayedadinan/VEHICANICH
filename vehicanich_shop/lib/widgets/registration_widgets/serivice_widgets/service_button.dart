@@ -17,7 +17,7 @@ class BodyServiceContainer extends StatelessWidget {
       listener: (context, state) {
         if (state is NavigatetoBodyservice) {
           Navigator.of(context)
-              .push(FadeTransitionPageRoute(child: ServiceTabPage()));
+              .push(FadeTransitionPageRoute(child: const ServiceTabPage()));
         }
       },
       child: GestureDetector(

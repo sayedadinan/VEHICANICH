@@ -8,7 +8,7 @@ import 'package:vehicanich_shop/utils/mediaquery.dart';
 class CustomBodydynamicard extends StatelessWidget {
   final String texts;
   final dynamic rate;
-  CustomBodydynamicard({super.key, required this.texts, required this.rate});
+  const CustomBodydynamicard({super.key, required this.texts, required this.rate});
 
   @override
   Widget build(BuildContext context) {
