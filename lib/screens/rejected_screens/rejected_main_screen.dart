@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:vehicahich_admin/repositery/shop_reference.dart';
+import 'package:vehicahich_admin/repositery/data_provider/shop_reference.dart';
 import 'package:vehicahich_admin/repositery/shopdetails_key.dart';
 import 'package:vehicahich_admin/widgets/rejected_widgets/rejected_grid.dart';
 import 'package:vehicahich_admin/widgets/rejected_widgets/rejected_listview.dart';
@@ -14,7 +14,7 @@ class RejectedRequestScreen extends StatelessWidget {
       body: StreamBuilder(
         stream: ShopReference()
             .shopCollectionReference()
-            .where(Shopkeys().isApproved, isEqualTo: false)
+            .where(Shopkeys().isRejected, isEqualTo: true)
             .snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {

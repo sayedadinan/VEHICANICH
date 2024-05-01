@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:vehicahich_admin/repositery/shop_reference.dart';
+import 'package:vehicahich_admin/repositery/data_provider/shop_reference.dart';
 import 'package:vehicahich_admin/repositery/shopdetails_key.dart';
 import 'package:vehicahich_admin/widgets/pending_widgets/pending_grid.dart';
 import 'package:vehicahich_admin/widgets/pending_widgets/pending_listview.dart';
@@ -15,6 +15,7 @@ class PendingRequestScreen extends StatelessWidget {
         stream: ShopReference()
             .shopCollectionReference()
             .where(Shopkeys().isApproved, isEqualTo: false)
+            .where(Shopkeys().isRejected, isEqualTo: false)
             .snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {

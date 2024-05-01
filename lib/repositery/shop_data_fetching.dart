@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:vehicahich_admin/repositery/data_provider/shop_reference.dart';
 
 class ShopRepository {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Future<List<Map<String, dynamic>>> getShopDetails() async {
     try {
       final QuerySnapshot querySnapshot =
-          await _firestore.collection('shop_details').get();
+          await ShopReference().shopCollectionReference().get();
       final List<Map<String, dynamic>> shopDetailsList = querySnapshot.docs
           .map((DocumentSnapshot doc) => doc.data() as Map<String, dynamic>)
           .toList();
@@ -15,5 +15,11 @@ class ShopRepository {
       print('Error fetching data: $e');
       rethrow;
     }
+  }
+
+  documentidpassing(QuerySnapshot querySnapshot) {
+    final updationreference = querySnapshot.docs.first;
+    final documentId = updationreference.id;
+    return documentId;
   }
 }

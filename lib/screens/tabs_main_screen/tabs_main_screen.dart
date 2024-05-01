@@ -5,8 +5,8 @@ import 'package:vehicahich_admin/screens/rejected_screens/rejected_main_screen.d
 import 'package:vehicahich_admin/utils/app_colors.dart';
 import 'package:vehicahich_admin/utils/app_mediaquery.dart';
 
-class EnqueryScreen extends StatelessWidget {
-  EnqueryScreen({Key? key}) : super(key: key);
+class MainScreen extends StatelessWidget {
+  MainScreen({Key? key}) : super(key: key);
 
   int selectedindex = 3;
   @override
@@ -41,8 +41,8 @@ class EnqueryScreen extends StatelessWidget {
             const Expanded(
               child: TabBarView(
                 children: [
-                  ApprovedRequestScreen(),
                   PendingRequestScreen(),
+                  ApprovedRequestScreen(),
                   RejectedRequestScreen(),
                 ],
               ),

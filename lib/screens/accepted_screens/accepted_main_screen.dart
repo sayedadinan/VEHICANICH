@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:vehicahich_admin/repositery/shop_reference.dart';
+import 'package:vehicahich_admin/repositery/data_provider/shop_reference.dart';
 import 'package:vehicahich_admin/repositery/shopdetails_key.dart';
 import 'package:vehicahich_admin/widgets/accepted_widgets/accepted_grid.dart';
 import 'package:vehicahich_admin/widgets/accepted_widgets/accepted_listview.dart';
@@ -14,7 +14,8 @@ class ApprovedRequestScreen extends StatelessWidget {
       body: StreamBuilder(
         stream: ShopReference()
             .shopCollectionReference()
-            .where(Shopkeys().isApproved, isEqualTo: false)
+            .where(Shopkeys().isApproved, isEqualTo: true)
+            .where(Shopkeys().isRejected, isEqualTo: false)
             .snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -36,7 +37,7 @@ class ApprovedRequestScreen extends StatelessWidget {
                 builder: (context, constraints) {
                   if (constraints.maxWidth > 600) {
                     return AcceptedPageGridview(
-                      shopList: shopdetails,
+                      shopLists: shopdetails,
                     );
                   } else {
                     return AcceptedListView(
