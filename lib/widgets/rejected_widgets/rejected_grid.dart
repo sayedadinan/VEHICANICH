@@ -65,8 +65,8 @@ class RejectedPageGridview extends StatelessWidget {
                               height:
                                   Mymediaquery().mediaquerywidth(0.10, context),
                               width: double.infinity,
-                              child: Image.network(
-                                  shop[Shopkeys().bannerimagepath]),
+                              child:
+                                  Image.network(shop[Shopkeys.bannerimagepath]),
                             ),
                           ),
                           SizedBox(
@@ -77,7 +77,7 @@ class RejectedPageGridview extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().shopname],
+                                shop[Shopkeys.shopname],
                                 style: TextStyle(
                                     fontFamily: 'Jersey20',
                                     fontWeight: FontWeight.w500,
@@ -90,7 +90,7 @@ class RejectedPageGridview extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().name],
+                                shop[Shopkeys.name],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()
@@ -106,7 +106,7 @@ class RejectedPageGridview extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().startingtime],
+                                shop[Shopkeys.startingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()
@@ -120,7 +120,7 @@ class RejectedPageGridview extends StatelessWidget {
                                         .mediaquerywidth(0.01, context)),
                               ),
                               Text(
-                                shop[Shopkeys().closingtime],
+                                shop[Shopkeys.closingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()

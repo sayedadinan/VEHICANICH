@@ -65,14 +65,14 @@ class AcceptedPageGridview extends StatelessWidget {
                                       .mediaquerywidth(0.10, context),
                                   width: double.infinity,
                                   child: Image.network(
-                                      shop[Shopkeys().bannerimagepath]))),
+                                      shop[Shopkeys.bannerimagepath]))),
                           SizedBox(
                               height: Mymediaquery()
                                   .mediaqueryheight(0.02, context)),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(shop[Shopkeys().shopname],
+                                Text(shop[Shopkeys.shopname],
                                     style: TextStyle(
                                         fontFamily: 'Jersey20',
                                         fontWeight: FontWeight.w500,
@@ -82,7 +82,7 @@ class AcceptedPageGridview extends StatelessWidget {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(shop[Shopkeys().name],
+                                Text(shop[Shopkeys.name],
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: Mymediaquery()
@@ -95,7 +95,7 @@ class AcceptedPageGridview extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().startingtime],
+                                shop[Shopkeys.startingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()
@@ -109,7 +109,7 @@ class AcceptedPageGridview extends StatelessWidget {
                                         .mediaquerywidth(0.01, context)),
                               ),
                               Text(
-                                shop[Shopkeys().closingtime],
+                                shop[Shopkeys.closingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()

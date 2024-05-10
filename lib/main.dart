@@ -33,42 +33,28 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// project_name/
-// ├── android/
-// ├── ios/
-// ├── lib/
-// │   ├── blocs/
-// │   │   ├── authentication/
-// │   │   │   ├── authentication_bloc.dart
-// │   │   │   └── authentication_event.dart
-// │   │   ├── data/
-// │   │   │   ├── data_bloc.dart
-// │   │   │   └── data_event.dart
-// │   │   └── ...
-// │   ├── models/
-// │   │   ├── user.dart
-// │   │   └── ...
-// │   ├── repositories/
-// │   │   ├── authentication_repository.dart
-// │   │   └── data_repository.dart
-// │   ├── screens/
-// │   │   ├── login_screen.dart
-// │   │   ├── home_screen.dart
-// │   │   └── ...
-// │   ├── services/
-// │   │   ├── firebase_auth_service.dart
-// │   │   ├── firebase_firestore_service.dart
-// │   │   └── ...
-// │   ├── utils/
-// │   │   ├── firebase_utils.dart
-// │   │   └── ...
-// │   ├── widgets/
-// │   │   ├── common_widget1.dart
-// │   │   ├── common_widget2.dart
-// │   │   └── ...
-// │   ├── app.dart
-// │   ├── main.dart
-// ├── test/
-// ├── pubspec.yaml
-// ├── README.md
-// └── ...
+// weather_app/
+// |-- lib/
+// |   |-- bloc/
+// |   |   |-- weather_bloc/
+// |   |   |   |-- weather_bloc.dart
+// |   |   |   |-- weather_event.dart
+// |   |   |   |-- weather_state.dart
+// |   |-- data/
+// |   |   |-- repository/
+// |   |   |   |-- weather_repo.dart
+// |   |   |-- models/
+// |   |   |   |-- weather.dart
+// |   |-- presentation/
+// |   |   |-- constants/
+// |   |   |   |-- app_string.dart
+// |   |   |   |-- colors.dart
+// |   |   |   |-- image_assets.dart
+// |   |   |   |-- styles.dart
+// |   |   |-- screens/
+// |   |   |   |-- search_page.dart
+// |   |   |   |-- show_weather.dart
+// |   |   |-- widgets/
+// |   |   |   |-- column_data_widget.dart
+// |   |   |   |-- pwh.dart
+// |-- main.dart

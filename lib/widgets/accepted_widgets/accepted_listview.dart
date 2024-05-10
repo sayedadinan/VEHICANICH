@@ -44,7 +44,7 @@ class AcceptedListView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12)),
                         width: Mymediaquery().mediaquerywidth(0.23, context),
                         height: Mymediaquery().mediaqueryheight(0.22, context),
-                        child: Image.network(shop[Shopkeys().bannerimagepath]),
+                        child: Image.network(shop[Shopkeys.bannerimagepath]),
                       ),
                       SizedBox(
                         width: Mymediaquery().mediaquerywidth(0.13, context),
@@ -58,7 +58,7 @@ class AcceptedListView extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                shop[Shopkeys().shopname],
+                                shop[Shopkeys.shopname],
                                 style: TextStyle(
                                     fontFamily: 'Jersey20',
                                     fontWeight: FontWeight.w500,
@@ -71,7 +71,7 @@ class AcceptedListView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().startingtime],
+                                shop[Shopkeys.startingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()
@@ -85,7 +85,7 @@ class AcceptedListView extends StatelessWidget {
                                         .mediaquerywidth(0.01, context)),
                               ),
                               Text(
-                                shop[Shopkeys().closingtime],
+                                shop[Shopkeys.closingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()

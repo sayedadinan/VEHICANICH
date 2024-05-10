@@ -8,7 +8,7 @@ class ShopDetailsUpdation {
         ShopReference().shopCollectionReference().doc(documentidpassing);
     try {
       await documentReference
-          .update({Shopkeys().isApproved: true, Shopkeys().isRejected: false});
+          .update({Shopkeys.isApproved: true, Shopkeys.isRejected: false});
     } catch (e) {
       return 'approve area error $e';
     }
@@ -18,7 +18,8 @@ class ShopDetailsUpdation {
     DocumentReference documentReference =
         ShopReference().shopCollectionReference().doc(documentidpassing);
     try {
-      await documentReference.update({Shopkeys().isRejected: true});
+      await documentReference
+          .update({Shopkeys.isRejected: true, Shopkeys.isApproved: false});
     } catch (e) {
       return 'reject area error $e';
     }

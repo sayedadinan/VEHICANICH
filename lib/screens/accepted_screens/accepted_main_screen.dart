@@ -14,8 +14,8 @@ class ApprovedRequestScreen extends StatelessWidget {
       body: StreamBuilder(
         stream: ShopReference()
             .shopCollectionReference()
-            .where(Shopkeys().isApproved, isEqualTo: true)
-            .where(Shopkeys().isRejected, isEqualTo: false)
+            .where(Shopkeys.isApproved, isEqualTo: true)
+            .where(Shopkeys.isRejected, isEqualTo: false)
             .snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {

@@ -14,7 +14,7 @@ class RejectedRequestScreen extends StatelessWidget {
       body: StreamBuilder(
         stream: ShopReference()
             .shopCollectionReference()
-            .where(Shopkeys().isRejected, isEqualTo: true)
+            .where(Shopkeys.isRejected, isEqualTo: true)
             .snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {

@@ -23,6 +23,7 @@ class RejectedandAcceptButton extends StatelessWidget {
                 context
                     .read<CurrentStatusBloc>()
                     .add(ApprovedButtonPressed(documentId: shop.id));
+                Navigator.of(context).pop();
               },
               text: 'accept',
               fontSize: Mymediaquery().mediaquerywidth(0.02, context),
@@ -38,8 +39,9 @@ class RejectedandAcceptButton extends StatelessWidget {
                 context
                     .read<CurrentStatusBloc>()
                     .add(RejectedButtonPressed(documentId: shop.id));
+                Navigator.of(context).pop();
               },
-              text: 'Rejected',
+              text: 'Reject',
               fontSize: Mymediaquery().mediaquerywidth(0.02, context),
               buttontextcolor: Colors.white,
               bordercolor: Colors.transparent),
@@ -64,6 +66,7 @@ class ApproveButton extends StatelessWidget {
               context
                   .read<CurrentStatusBloc>()
                   .add(ApprovedButtonPressed(documentId: shop.id));
+              Navigator.of(context).pop();
             },
             text: 'accept',
             fontSize: Mymediaquery().mediaquerywidth(0.02, context),
@@ -88,8 +91,9 @@ class RejectedBUtton extends StatelessWidget {
             context
                 .read<CurrentStatusBloc>()
                 .add(RejectedButtonPressed(documentId: shop.id));
+            Navigator.of(context).pop();
           },
-          text: 'Rejected',
+          text: 'Reject',
           fontSize: Mymediaquery().mediaquerywidth(0.02, context),
           buttontextcolor: Colors.white,
           bordercolor: Colors.transparent),

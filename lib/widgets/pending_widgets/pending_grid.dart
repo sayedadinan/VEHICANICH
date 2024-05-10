@@ -20,7 +20,7 @@ class PendingPageGridview extends StatelessWidget {
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             childAspectRatio: 0.83,
-            crossAxisCount: 4, // Number of columns in the grid
+            crossAxisCount: 4,
             crossAxisSpacing: 18.0,
             mainAxisSpacing: 10.0,
           ),
@@ -65,8 +65,8 @@ class PendingPageGridview extends StatelessWidget {
                               height:
                                   Mymediaquery().mediaquerywidth(0.10, context),
                               width: double.infinity,
-                              child: Image.network(
-                                  shop[Shopkeys().bannerimagepath]),
+                              child:
+                                  Image.network(shop[Shopkeys.bannerimagepath]),
                             ),
                           ),
                           SizedBox(
@@ -77,7 +77,7 @@ class PendingPageGridview extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().shopname],
+                                shop[Shopkeys.shopname],
                                 style: TextStyle(
                                     overflow: TextOverflow.ellipsis,
                                     fontFamily: 'Jersey20',
@@ -91,7 +91,7 @@ class PendingPageGridview extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().name],
+                                shop[Shopkeys.name],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()
@@ -107,7 +107,7 @@ class PendingPageGridview extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                shop[Shopkeys().startingtime],
+                                shop[Shopkeys.startingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()
@@ -121,7 +121,7 @@ class PendingPageGridview extends StatelessWidget {
                                         .mediaquerywidth(0.01, context)),
                               ),
                               Text(
-                                shop[Shopkeys().closingtime],
+                                shop[Shopkeys.closingtime],
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: Mymediaquery()
