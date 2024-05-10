@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:vehicahich_admin/screens/accepted_screens/accepted_main_screen.dart';
 import 'package:vehicahich_admin/screens/pending_screen/pending_request_sreen.dart';
@@ -6,7 +8,7 @@ import 'package:vehicahich_admin/utils/app_colors.dart';
 import 'package:vehicahich_admin/utils/app_mediaquery.dart';
 
 class MainScreen extends StatelessWidget {
-  MainScreen({Key? key}) : super(key: key);
+  MainScreen({super.key});
 
   int selectedindex = 3;
   @override

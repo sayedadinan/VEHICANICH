@@ -6,7 +6,9 @@ import 'package:vehicahich_admin/widgets/rejected_widgets/rejected_grid.dart';
 import 'package:vehicahich_admin/widgets/rejected_widgets/rejected_listview.dart';
 
 class RejectedRequestScreen extends StatelessWidget {
-  const RejectedRequestScreen({Key? key});
+  const RejectedRequestScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,9 @@ import 'package:vehicahich_admin/widgets/accepted_widgets/accepted_grid.dart';
 import 'package:vehicahich_admin/widgets/accepted_widgets/accepted_listview.dart';
 
 class ApprovedRequestScreen extends StatelessWidget {
-  const ApprovedRequestScreen({Key? key});
+  const ApprovedRequestScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

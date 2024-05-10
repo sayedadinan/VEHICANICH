@@ -6,7 +6,9 @@ import 'package:vehicahich_admin/widgets/pending_widgets/pending_grid.dart';
 import 'package:vehicahich_admin/widgets/pending_widgets/pending_listview.dart';
 
 class PendingRequestScreen extends StatelessWidget {
-  const PendingRequestScreen({Key? key});
+  const PendingRequestScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

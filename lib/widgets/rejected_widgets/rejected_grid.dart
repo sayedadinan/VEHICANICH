@@ -28,7 +28,7 @@ class RejectedPageGridview extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             final shop = shopList[index];
             return ConstrainedBox(
-              constraints: BoxConstraints(minWidth: 100),
+              constraints: const BoxConstraints(minWidth: 100),
               child: GridTile(
                 child: GestureDetector(
                   onTap: () {
