@@ -19,7 +19,7 @@ class MainScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Myappallcolor().appbarbackgroundcolor,
           title: Text(
-            'REQUESTS',  
+            'REQUESTS',     
             style: TextStyle(
               fontSize: Mymediaquery().mediaquerywidth(0.02, context),
               color: Myappallcolor().colorwhite,

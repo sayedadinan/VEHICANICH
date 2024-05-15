@@ -27,7 +27,7 @@ class ApprovedRequestScreen extends StatelessWidget {
           } else if (snapshot.connectionState == ConnectionState.active) {
             if (snapshot.hasError) {
               return Center(
-                child: Text('Error: ${snapshot.error}'),
+                child: Text('Error: h ${snapshot.error}'),
               );
             } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
               return const Center(
