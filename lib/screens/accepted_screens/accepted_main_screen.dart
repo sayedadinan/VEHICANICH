@@ -51,7 +51,9 @@ class ApprovedRequestScreen extends StatelessWidget {
             }
           } else {
             return Center(
-              child: Text('Connection state: ${snapshot.connectionState}'),
+              child: Text(
+                'Connection state: ${snapshot.connectionState}',
+              ),
             );
           }
         },

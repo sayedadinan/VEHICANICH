@@ -89,18 +89,17 @@ class LoginScreen extends StatelessWidget {
                             constraints: const BoxConstraints(
                                 maxWidth: 300, maxHeight: 40),
                             child: CustomButton(
-                              text: 'Login',
-                              function: () {
-                                context
-                                    .read<LoginBLoc>()
-                                    .add(LoginButtonPressed());
-                              },
-                              bordercolor: Colors.transparent,
-                              buttontextcolor: Myappallcolor().colorwhite,
-                              color: Myappallcolor().buttonforgroundcolor,
-                              fontSize: Mymediaquery()
-                                  .mediaqueryheight(0.02, context),
-                            ),
+                                text: 'Login',
+                                function: () {
+                                  context
+                                      .read<LoginBLoc>()
+                                      .add(LoginButtonPressed());
+                                },
+                                bordercolor: Colors.transparent,
+                                buttontextcolor: Myappallcolor().colorwhite,
+                                color: Myappallcolor().buttonforgroundcolor,
+                                fontSize: Mymediaquery()
+                                    .mediaqueryheight(0.02, context)),
                           )
                         ],
                       ),

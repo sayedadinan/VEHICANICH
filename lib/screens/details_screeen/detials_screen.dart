@@ -40,8 +40,14 @@ class DetailsScreen extends StatelessWidget {
                       color: Myappallcolor().gridviewcardcolor,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    width: Mymediaquery().mediaquerywidth(0.8, context),
-                    height: Mymediaquery().mediaqueryheight(2, context),
+                    width: Mymediaquery().mediaquerywidth(
+                      0.8,
+                      context,
+                    ),
+                    height: Mymediaquery().mediaqueryheight(
+                      2,
+                      context,
+                    ),
                     child: Column(
                       children: [
                         DetailsFields(shopList: shopList),
