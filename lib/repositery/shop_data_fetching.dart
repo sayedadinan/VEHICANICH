@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vehicahich_admin/repositery/data_provider/shop_reference.dart';
 
@@ -9,10 +11,10 @@ class ShopRepository {
       final List<Map<String, dynamic>> shopDetailsList = querySnapshot.docs
           .map((DocumentSnapshot doc) => doc.data() as Map<String, dynamic>)
           .toList();
-      print('Successfully fetched data: $shopDetailsList');
+      log('Successfully fetched data: $shopDetailsList');
       return shopDetailsList;
     } catch (e) {
-      print('Error fetching data: $e');
+      log('Error fetching data: $e');
       rethrow;
     }
   }

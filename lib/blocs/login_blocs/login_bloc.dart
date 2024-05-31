@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:vehicahich_admin/utils/constant_variables/textcontrollers.dart';
 part 'login_event.dart';
@@ -16,7 +18,7 @@ class LoginBLoc extends Bloc<LoginButtonEvent, LoginButtonState> {
           password == passwordController.text) {
         emit(LoginSuccess());
       } else {
-        print('not correct');
+        log('not correct');
       }
     } catch (e) {
       emit(LoginError(error: 'error in login $e'));

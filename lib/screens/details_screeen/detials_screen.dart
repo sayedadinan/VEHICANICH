@@ -6,6 +6,7 @@ import 'package:vehicahich_admin/widgets/details_screen_widgets/details_containe
 import 'package:vehicahich_admin/widgets/details_screen_widgets/details_page_buttons.dart';
 
 class DetailsScreen extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final shopList;
   final CurrentStatus currentStatus;
   const DetailsScreen(
