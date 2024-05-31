@@ -33,28 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// weather_app/
-// |-- lib/
-// |   |-- bloc/
-// |   |   |-- weather_bloc/
-// |   |   |   |-- weather_bloc.dart
-// |   |   |   |-- weather_event.dart
-// |   |   |   |-- weather_state.dart
-// |   |-- data/
-// |   |   |-- repository/
-// |   |   |   |-- weather_repo.dart
-// |   |   |-- models/
-// |   |   |   |-- weather.dart
-// |   |-- presentation/
-// |   |   |-- constants/
-// |   |   |   |-- app_string.dart
-// |   |   |   |-- colors.dart
-// |   |   |   |-- image_assets.dart
-// |   |   |   |-- styles.dart
-// |   |   |-- screens/
-// |   |   |   |-- search_page.dart
-// |   |   |   |-- show_weather.dart
-// |   |   |-- widgets/
-// |   |   |   |-- column_data_widget.dart
-// |   |   |   |-- pwh.dart
-// |-- main.dart
